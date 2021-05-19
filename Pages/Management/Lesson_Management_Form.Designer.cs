@@ -96,7 +96,7 @@ namespace UniOtomasyonUI.Pages.Administration
             this.Btn_Lesson_Add.FlatAppearance.BorderSize = 0;
             this.Btn_Lesson_Add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_Lesson_Add.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_Lesson_Add.Location = new System.Drawing.Point(272, 210);
+            this.Btn_Lesson_Add.Location = new System.Drawing.Point(250, 210);
             this.Btn_Lesson_Add.Name = "Btn_Lesson_Add";
             this.Btn_Lesson_Add.Size = new System.Drawing.Size(88, 28);
             this.Btn_Lesson_Add.TabIndex = 10;
@@ -110,7 +110,7 @@ namespace UniOtomasyonUI.Pages.Administration
             this.Btn_Lesson_Update.FlatAppearance.BorderSize = 0;
             this.Btn_Lesson_Update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_Lesson_Update.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_Lesson_Update.Location = new System.Drawing.Point(139, 210);
+            this.Btn_Lesson_Update.Location = new System.Drawing.Point(134, 210);
             this.Btn_Lesson_Update.Name = "Btn_Lesson_Update";
             this.Btn_Lesson_Update.Size = new System.Drawing.Size(88, 28);
             this.Btn_Lesson_Update.TabIndex = 9;
@@ -124,7 +124,7 @@ namespace UniOtomasyonUI.Pages.Administration
             this.Btn_Lesson_Delete.FlatAppearance.BorderSize = 0;
             this.Btn_Lesson_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_Lesson_Delete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_Lesson_Delete.Location = new System.Drawing.Point(6, 210);
+            this.Btn_Lesson_Delete.Location = new System.Drawing.Point(18, 210);
             this.Btn_Lesson_Delete.Name = "Btn_Lesson_Delete";
             this.Btn_Lesson_Delete.Size = new System.Drawing.Size(88, 28);
             this.Btn_Lesson_Delete.TabIndex = 8;
@@ -243,7 +243,7 @@ namespace UniOtomasyonUI.Pages.Administration
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Lesson_Management_Form";
-            this.Text = "Lesson_Management_Form";
+            this.Text = "Ders Yönetim Paneli";
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
