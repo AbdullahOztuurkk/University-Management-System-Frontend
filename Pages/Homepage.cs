@@ -10,15 +10,27 @@ namespace UniOtomasyonUI
         {
             InitializeComponent();
         }
-        private void CB_User_Type_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+        public static int SECURITY_CODE_LENGTH = 5;
 
         private void Btn_Login_Click(object sender, EventArgs e)
         {
             Student_Form form = new Student_Form();
             form.ShowDialog();
+        }
+
+        private void Homepage_Load(object sender, EventArgs e)
+        {
+            Txt_Code.Text = Create_Security_Code();
+        }
+
+        static string Create_Security_Code()
+        {
+            return new Random().Next(99999999).ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Txt_Code.Text = Create_Security_Code();
         }
     }
 }

@@ -31,8 +31,10 @@ namespace UniOtomasyonUI
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Txt_Code = new System.Windows.Forms.Label();
+            this.Txt_Security_Code = new System.Windows.Forms.MaskedTextBox();
             this.Btn_Login = new System.Windows.Forms.Button();
-            this.CB_User_Type = new System.Windows.Forms.ComboBox();
             this.Txt_User_Password = new System.Windows.Forms.TextBox();
             this.Txt_User_Email = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -64,8 +66,10 @@ namespace UniOtomasyonUI
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.Txt_Code);
+            this.panel2.Controls.Add(this.Txt_Security_Code);
             this.panel2.Controls.Add(this.Btn_Login);
-            this.panel2.Controls.Add(this.CB_User_Type);
             this.panel2.Controls.Add(this.Txt_User_Password);
             this.panel2.Controls.Add(this.Txt_User_Email);
             this.panel2.Controls.Add(this.label7);
@@ -77,6 +81,36 @@ namespace UniOtomasyonUI
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(382, 309);
             this.panel2.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(336, 166);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(23, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "➕";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Txt_Code
+            // 
+            this.Txt_Code.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Txt_Code.Location = new System.Drawing.Point(128, 166);
+            this.Txt_Code.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Txt_Code.Name = "Txt_Code";
+            this.Txt_Code.Size = new System.Drawing.Size(46, 20);
+            this.Txt_Code.TabIndex = 6;
+            this.Txt_Code.Text = "12345";
+            // 
+            // Txt_Security_Code
+            // 
+            this.Txt_Security_Code.Location = new System.Drawing.Point(181, 167);
+            this.Txt_Security_Code.Mask = "00000";
+            this.Txt_Security_Code.Name = "Txt_Security_Code";
+            this.Txt_Security_Code.Size = new System.Drawing.Size(154, 23);
+            this.Txt_Security_Code.TabIndex = 5;
+            this.Txt_Security_Code.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Txt_Security_Code.ValidatingType = typeof(int);
             // 
             // Btn_Login
             // 
@@ -90,19 +124,6 @@ namespace UniOtomasyonUI
             this.Btn_Login.Text = "Giriş Yap";
             this.Btn_Login.UseVisualStyleBackColor = false;
             this.Btn_Login.Click += new System.EventHandler(this.Btn_Login_Click);
-            // 
-            // CB_User_Type
-            // 
-            this.CB_User_Type.FormattingEnabled = true;
-            this.CB_User_Type.Items.AddRange(new object[] {
-            "Öğrenci",
-            "Öğretmen"});
-            this.CB_User_Type.Location = new System.Drawing.Point(87, 167);
-            this.CB_User_Type.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.CB_User_Type.Name = "CB_User_Type";
-            this.CB_User_Type.Size = new System.Drawing.Size(272, 23);
-            this.CB_User_Type.TabIndex = 2;
-            this.CB_User_Type.SelectedIndexChanged += new System.EventHandler(this.CB_User_Type_SelectedIndexChanged);
             // 
             // Txt_User_Password
             // 
@@ -130,29 +151,27 @@ namespace UniOtomasyonUI
             this.label7.Location = new System.Drawing.Point(22, 166);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 40);
+            this.label7.Size = new System.Drawing.Size(107, 20);
             this.label7.TabIndex = 2;
-            this.label7.Text = "Kullanıcı\r\nTipi :";
+            this.label7.Text = "Güvenlik Kodu :";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(32, 113);
+            this.label6.Location = new System.Drawing.Point(22, 113);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 20);
+            this.label6.Size = new System.Drawing.Size(107, 20);
             this.label6.TabIndex = 1;
             this.label6.Text = "Şifre :";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(29, 60);
+            this.label5.Location = new System.Drawing.Point(22, 60);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 20);
+            this.label5.Size = new System.Drawing.Size(107, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "Email :";
             // 
@@ -176,6 +195,7 @@ namespace UniOtomasyonUI
             this.Name = "Homepage";
             this.ShowIcon = false;
             this.Text = "Sivas Cumhuriyet Üniversitesi OBS";
+            this.Load += new System.EventHandler(this.Homepage_Load);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -193,9 +213,11 @@ namespace UniOtomasyonUI
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox CB_User_Type;
         private System.Windows.Forms.TextBox Txt_User_Password;
         private System.Windows.Forms.TextBox Txt_User_Email;
         private System.Windows.Forms.Button Btn_Login;
+        private System.Windows.Forms.MaskedTextBox Txt_Security_Code;
+        private System.Windows.Forms.Label Txt_Code;
+        private System.Windows.Forms.Button button1;
     }
 }
