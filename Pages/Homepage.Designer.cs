@@ -87,7 +87,7 @@ namespace UniOtomasyonUI
             this.button1.Location = new System.Drawing.Point(336, 166);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(23, 23);
-            this.button1.TabIndex = 7;
+            this.button1.TabIndex = 3;
             this.button1.Text = "➕";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -108,7 +108,7 @@ namespace UniOtomasyonUI
             this.Txt_Security_Code.Mask = "00000";
             this.Txt_Security_Code.Name = "Txt_Security_Code";
             this.Txt_Security_Code.Size = new System.Drawing.Size(154, 23);
-            this.Txt_Security_Code.TabIndex = 5;
+            this.Txt_Security_Code.TabIndex = 2;
             this.Txt_Security_Code.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txt_Security_Code.ValidatingType = typeof(int);
             // 
@@ -129,7 +129,7 @@ namespace UniOtomasyonUI
             // 
             this.Txt_User_Password.Location = new System.Drawing.Point(87, 114);
             this.Txt_User_Password.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Txt_User_Password.MaxLength = 50;
+            this.Txt_User_Password.MaxLength = 16;
             this.Txt_User_Password.Name = "Txt_User_Password";
             this.Txt_User_Password.Size = new System.Drawing.Size(272, 23);
             this.Txt_User_Password.TabIndex = 1;
