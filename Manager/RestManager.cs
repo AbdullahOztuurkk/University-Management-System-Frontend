@@ -2,9 +2,7 @@
 using Newtonsoft.Json.Linq;
 using RestSharp;
 using RestSharp.Serializers.NewtonsoftJson;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace UniOtomasyonUI.Manager
 {
@@ -25,7 +23,13 @@ namespace UniOtomasyonUI.Manager
             parameter_table = new Dictionary<string, object>();
             cookie_table = new Dictionary<string, string>();
         }
-
+        /// <summary>
+        /// Create a http request with parameters and cookies
+        /// </summary>
+        /// <param name="endpoint">api endpoint url</param>
+        /// <param name="httpMethod">Http method type</param>
+        /// <param name="jsonModel">Any object for request</param>
+        /// <returns>IRestResponse</returns>
         public IRestResponse CreateHttpRequest(string endpoint, Method httpMethod, object jsonModel = null)
         {
             request = new RestRequest(endpoint, httpMethod, DataFormat.Json);
@@ -50,25 +54,44 @@ namespace UniOtomasyonUI.Manager
             cookie_count = 0;
             return response;
         }
-
+        /// <summary>
+        /// Add Parameter before create http request
+        /// </summary>
+        /// <param name="name">Parameter name</param>
+        /// <param name="parameterModel">Parameter Value</param>
         public void AddParameter(string name, object parameterModel)
         {
             parameter_count++;
             parameter_table.Add(name, parameterModel);
         }
 
+        /// <summary>
+        /// Add Cookie before create http request
+        /// </summary>
+        /// <param name="key">Cookie Name</param>
+        /// <param name="value">Cookie Value</param>
         public void AddCookie(string key, string value)
         {
             cookie_count++;
             cookie_table.Add(key, value);
         }
 
+        /// <summary>
+        /// Convert IRestResponse to Json
+        /// </summary>
+        /// <param name="response">IRestResponse object</param>
+        /// <returns></returns>
         public JObject ResponseToJson(IRestResponse response)
         {
             var jObject = JsonConvert.DeserializeObject(response.Content);
             return (JObject)jObject;
         }
-
+        /// <summary>
+        /// Read specified field in RestResponse
+        /// </summary>
+        /// <param name="response">IRestResponse object</param>
+        /// <param name="name">Specific field name</param>
+        /// <returns></returns>
         public string ReadResponseField(IRestResponse response, string name)
         {
             var JObjectResponse = ResponseToJson(response);
