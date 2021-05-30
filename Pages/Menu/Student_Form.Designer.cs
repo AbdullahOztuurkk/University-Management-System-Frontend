@@ -134,7 +134,7 @@ namespace UniOtomasyonUI.Pages
             this.ClientSize = new System.Drawing.Size(784, 761);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Student_Form";
-            this.Text = "Eğitmen Paneli";
+            this.Text = "Öğrenci Paneli";
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.Panel_Note.ResumeLayout(false);
