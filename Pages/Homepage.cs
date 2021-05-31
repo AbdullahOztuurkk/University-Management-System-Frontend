@@ -121,6 +121,7 @@ namespace UniOtomasyonUI
         /// <returns>Validity</returns>
         private bool CheckValidation()
         {
+            errorMessage = null;
             if (!IsValidEmail(Txt_User_Email.Text)) { errorMessage = Messages.Invalid_Email; }
             else if (Txt_User_Email.Text == "" || Txt_User_Password.Text == "") { errorMessage = Messages.Not_Empty_Credentials; }
             else if (Txt_Security_Code.Text != Txt_Code.Text) { errorMessage = Messages.Invalid_Security_Code; }
