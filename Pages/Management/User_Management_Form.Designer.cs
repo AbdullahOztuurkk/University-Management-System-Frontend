@@ -31,6 +31,13 @@ namespace UniOtomasyonUI.Pages.Management
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Txt_Password = new System.Windows.Forms.TextBox();
+            this.CB_Status = new System.Windows.Forms.ComboBox();
+            this.Txt_Password_Again = new System.Windows.Forms.TextBox();
+            this.Txt_Surname = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.Btn_User_Add = new System.Windows.Forms.Button();
             this.Btn_User_Update = new System.Windows.Forms.Button();
             this.Btn_User_Delete = new System.Windows.Forms.Button();
@@ -41,13 +48,6 @@ namespace UniOtomasyonUI.Pages.Management
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DG_Lesson = new System.Windows.Forms.DataGridView();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.Txt_Surname = new System.Windows.Forms.TextBox();
-            this.Txt_Password_Again = new System.Windows.Forms.TextBox();
-            this.CB_Status = new System.Windows.Forms.ComboBox();
-            this.Txt_Password = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -92,6 +92,69 @@ namespace UniOtomasyonUI.Pages.Management
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kullanıcı Ekle";
+            // 
+            // Txt_Password
+            // 
+            this.Txt_Password.Location = new System.Drawing.Point(135, 78);
+            this.Txt_Password.Name = "Txt_Password";
+            this.Txt_Password.Size = new System.Drawing.Size(227, 23);
+            this.Txt_Password.TabIndex = 3;
+            this.Txt_Password.UseSystemPasswordChar = true;
+            // 
+            // CB_Status
+            // 
+            this.CB_Status.FormattingEnabled = true;
+            this.CB_Status.Items.AddRange(new object[] {
+            "Aktif",
+            "İnaktif",
+            "Mezun",
+            "Terk"});
+            this.CB_Status.Location = new System.Drawing.Point(500, 120);
+            this.CB_Status.Name = "CB_Status";
+            this.CB_Status.Size = new System.Drawing.Size(227, 23);
+            this.CB_Status.TabIndex = 6;
+            // 
+            // Txt_Password_Again
+            // 
+            this.Txt_Password_Again.Location = new System.Drawing.Point(500, 78);
+            this.Txt_Password_Again.Name = "Txt_Password_Again";
+            this.Txt_Password_Again.Size = new System.Drawing.Size(227, 23);
+            this.Txt_Password_Again.TabIndex = 4;
+            this.Txt_Password_Again.UseSystemPasswordChar = true;
+            // 
+            // Txt_Surname
+            // 
+            this.Txt_Surname.Location = new System.Drawing.Point(500, 36);
+            this.Txt_Surname.Name = "Txt_Surname";
+            this.Txt_Surname.Size = new System.Drawing.Size(227, 23);
+            this.Txt_Surname.TabIndex = 2;
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(394, 119);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 23);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Mevcut Durum :";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(394, 77);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 23);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Şifre (Tekrar) :";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label11
+            // 
+            this.label11.Location = new System.Drawing.Point(394, 35);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(100, 23);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Soyadı :";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Btn_User_Add
             // 
@@ -138,6 +201,10 @@ namespace UniOtomasyonUI.Pages.Management
             // CB_Role
             // 
             this.CB_Role.FormattingEnabled = true;
+            this.CB_Role.Items.AddRange(new object[] {
+            "Öğrenci",
+            "Öğretmen",
+            "Yetkili"});
             this.CB_Role.Location = new System.Drawing.Point(133, 120);
             this.CB_Role.Name = "CB_Role";
             this.CB_Role.Size = new System.Drawing.Size(227, 23);
@@ -205,64 +272,6 @@ namespace UniOtomasyonUI.Pages.Management
             this.DG_Lesson.RowTemplate.Height = 25;
             this.DG_Lesson.Size = new System.Drawing.Size(757, 242);
             this.DG_Lesson.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.Location = new System.Drawing.Point(394, 119);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 23);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "Mevcut Durum :";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label10
-            // 
-            this.label10.Location = new System.Drawing.Point(394, 77);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 23);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Şifre (Tekrar) :";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label11
-            // 
-            this.label11.Location = new System.Drawing.Point(394, 35);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(100, 23);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Soyadı :";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // Txt_Surname
-            // 
-            this.Txt_Surname.Location = new System.Drawing.Point(500, 36);
-            this.Txt_Surname.Name = "Txt_Surname";
-            this.Txt_Surname.Size = new System.Drawing.Size(227, 23);
-            this.Txt_Surname.TabIndex = 2;
-            // 
-            // Txt_Password_Again
-            // 
-            this.Txt_Password_Again.Location = new System.Drawing.Point(500, 78);
-            this.Txt_Password_Again.Name = "Txt_Password_Again";
-            this.Txt_Password_Again.Size = new System.Drawing.Size(227, 23);
-            this.Txt_Password_Again.TabIndex = 4;
-            this.Txt_Password_Again.UseSystemPasswordChar = true;
-            // 
-            // CB_Status
-            // 
-            this.CB_Status.FormattingEnabled = true;
-            this.CB_Status.Location = new System.Drawing.Point(500, 120);
-            this.CB_Status.Name = "CB_Status";
-            this.CB_Status.Size = new System.Drawing.Size(227, 23);
-            this.CB_Status.TabIndex = 6;
-            // 
-            // Txt_Password
-            // 
-            this.Txt_Password.Location = new System.Drawing.Point(135, 78);
-            this.Txt_Password.Name = "Txt_Password";
-            this.Txt_Password.Size = new System.Drawing.Size(227, 23);
-            this.Txt_Password.TabIndex = 3;
-            this.Txt_Password.UseSystemPasswordChar = true;
             // 
             // User_Management_Form
             // 
