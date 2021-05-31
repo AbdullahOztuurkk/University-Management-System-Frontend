@@ -52,6 +52,8 @@ namespace UniOtomasyonUI.Manager
             var response = client.Execute(request);
             parameter_count = 0;
             cookie_count = 0;
+            parameter_table.Clear();
+            cookie_table.Clear();
             return response;
         }
         /// <summary>
