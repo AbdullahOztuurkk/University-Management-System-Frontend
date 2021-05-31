@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using UniOtomasyonUI.Pages.Informations;
 using WinFormUI.Layout;
 
 namespace UniOtomasyonUI.Pages
@@ -16,14 +17,15 @@ namespace UniOtomasyonUI.Pages
             InitializeComponent();
         }
 
-
-        private void label6_Click(object sender, EventArgs e)
+        private void Panel_Exams_Click(object sender, EventArgs e)
         {
+            //Code Here
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void Panel_Informations_Click(object sender, EventArgs e)
         {
-
+            Information_Form form = new Information_Form();
+            form.ShowDialog();
         }
     }
 }
