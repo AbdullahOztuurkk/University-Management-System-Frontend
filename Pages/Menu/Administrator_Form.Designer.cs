@@ -29,6 +29,7 @@ namespace UniOtomasyonUI.Pages
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administrator_Form));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Panel_Note = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -212,6 +213,7 @@ namespace UniOtomasyonUI.Pages
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 761);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Administrator_Form";
             this.Text = "Yönetim Paneli";
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);

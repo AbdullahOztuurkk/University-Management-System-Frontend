@@ -29,6 +29,7 @@ namespace UniOtomasyonUI.Pages.Administration
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lesson_Management_Form));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Btn_Lesson_Add = new System.Windows.Forms.Button();
@@ -242,6 +243,7 @@ namespace UniOtomasyonUI.Pages.Administration
             this.ClientSize = new System.Drawing.Size(784, 761);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Lesson_Management_Form";
             this.Text = "Ders Yönetim Paneli";
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);

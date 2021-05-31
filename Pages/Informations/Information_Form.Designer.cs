@@ -29,6 +29,7 @@ namespace UniOtomasyonUI.Pages.Informations
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Information_Form));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Txt_Email = new System.Windows.Forms.Label();
@@ -300,6 +301,7 @@ namespace UniOtomasyonUI.Pages.Informations
             this.ClientSize = new System.Drawing.Size(784, 808);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Information_Form";
             this.Text = "Kullanıcı Bilgilerim";
             this.Load += new System.EventHandler(this.Information_Form_Load);
