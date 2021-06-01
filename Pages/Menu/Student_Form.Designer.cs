@@ -189,6 +189,7 @@ namespace UniOtomasyonUI.Pages
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Student_Form";
             this.Text = "Öğrenci Paneli";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Student_Form_FormClosed);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.Panel_Note.ResumeLayout(false);

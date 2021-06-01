@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using UniOtomasyonUI.Pages.Informations;
+using UniOtomasyonUI.Pages.User;
 using WinFormUI.Layout;
 
 namespace UniOtomasyonUI.Pages
@@ -19,14 +20,19 @@ namespace UniOtomasyonUI.Pages
 
         private void Panel_Exams_Click(object sender, EventArgs e)
         {
-            //Code Here
+            Exams_Form form = new Exams_Form();
+            form.ShowDialog();
         }
 
         private void Panel_Informations_Click(object sender, EventArgs e)
         {
-            this.Visible = true;
             Information_Form form = new Information_Form();
             form.ShowDialog();
+        }
+
+        private void Student_Form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Visible = false;
         }
     }
 }
