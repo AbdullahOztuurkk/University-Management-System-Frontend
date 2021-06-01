@@ -98,21 +98,14 @@ namespace UniOtomasyonUI
         /// <param name="role">User Role</param>
         private void OpenUserForm(string role)
         {
+            Form form=null;
             switch (role)
             {
-                case "STUDENT":
-                    Student_Form student_Form = new Student_Form();
-                    student_Form.ShowDialog();
-                    break;
-                case "TEACHER":
-                    Lecturer_Form lecturer_Form = new Lecturer_Form();
-                    lecturer_Form.ShowDialog();
-                    break;
-                case "ADMIN":
-                    Administrator_Form administrator_Form = new Administrator_Form();
-                    administrator_Form.ShowDialog();
-                    break;
+                case "STUDENT": form = new Student_Form(); break;
+                case "TEACHER": form = new Lecturer_Form(); break;
+                case "ADMIN": form = new Administrator_Form(); break;
             }
+            form.ShowDialog();
         }
 
         /// <summary>
