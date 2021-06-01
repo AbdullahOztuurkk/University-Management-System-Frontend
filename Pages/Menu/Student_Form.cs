@@ -24,6 +24,7 @@ namespace UniOtomasyonUI.Pages
 
         private void Panel_Informations_Click(object sender, EventArgs e)
         {
+            this.Visible = true;
             Information_Form form = new Information_Form();
             form.ShowDialog();
         }
