@@ -59,7 +59,7 @@ namespace UniOtomasyonUI.Pages.User
                 {
                     foreach (var exam in Exams)
                     {
-                        DG_Lesson.Rows.Add(
+                        DG_Exam.Rows.Add(
                             exam.UserLesson.lesson.code,
                             exam.UserLesson.lesson.name,
                             exam.UserLesson.lesson.credit,

@@ -29,12 +29,12 @@ namespace UniOtomasyonUI.Pages.User
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.DG_Lesson = new System.Windows.Forms.DataGridView();
+            this.DG_Exam = new System.Windows.Forms.DataGridView();
             this.LessonCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LessonName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LessonCredit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +49,7 @@ namespace UniOtomasyonUI.Pages.User
             this.PB_User_Image = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DG_Lesson)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DG_Exam)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_User_Image)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +70,7 @@ namespace UniOtomasyonUI.Pages.User
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.DG_Lesson);
+            this.groupBox1.Controls.Add(this.DG_Exam);
             this.groupBox1.Location = new System.Drawing.Point(15, 155);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(15);
             this.groupBox1.Name = "groupBox1";
@@ -79,48 +79,48 @@ namespace UniOtomasyonUI.Pages.User
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Notlarım";
             // 
-            // DG_Lesson
+            // DG_Exam
             // 
-            this.DG_Lesson.AllowUserToAddRows = false;
-            this.DG_Lesson.AllowUserToDeleteRows = false;
-            this.DG_Lesson.AllowUserToResizeRows = false;
-            this.DG_Lesson.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DG_Lesson.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.DG_Lesson.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DG_Lesson.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.DG_Lesson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DG_Lesson.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DG_Exam.AllowUserToAddRows = false;
+            this.DG_Exam.AllowUserToDeleteRows = false;
+            this.DG_Exam.AllowUserToResizeRows = false;
+            this.DG_Exam.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DG_Exam.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.DG_Exam.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DG_Exam.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.DG_Exam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DG_Exam.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.LessonCode,
             this.LessonName,
             this.LessonCredit,
             this.ExamType,
             this.Score,
             this.announcementDate});
-            this.DG_Lesson.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DG_Lesson.Location = new System.Drawing.Point(3, 19);
-            this.DG_Lesson.MultiSelect = false;
-            this.DG_Lesson.Name = "DG_Lesson";
-            this.DG_Lesson.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DG_Lesson.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DG_Lesson.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.DG_Lesson.RowTemplate.Height = 25;
-            this.DG_Lesson.Size = new System.Drawing.Size(748, 371);
-            this.DG_Lesson.TabIndex = 0;
+            this.DG_Exam.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DG_Exam.Location = new System.Drawing.Point(3, 19);
+            this.DG_Exam.MultiSelect = false;
+            this.DG_Exam.Name = "DG_Exam";
+            this.DG_Exam.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DG_Exam.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DG_Exam.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.DG_Exam.RowTemplate.Height = 25;
+            this.DG_Exam.Size = new System.Drawing.Size(748, 371);
+            this.DG_Exam.TabIndex = 0;
             // 
             // LessonCode
             // 
@@ -232,7 +232,7 @@ namespace UniOtomasyonUI.Pages.User
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DG_Lesson)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DG_Exam)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_User_Image)).EndInit();
@@ -245,7 +245,7 @@ namespace UniOtomasyonUI.Pages.User
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView DG_Lesson;
+        private System.Windows.Forms.DataGridView DG_Exam;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label Lbl_Soyad;
         private System.Windows.Forms.Label Lbl_Ad;
