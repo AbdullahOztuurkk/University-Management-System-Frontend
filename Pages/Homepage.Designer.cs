@@ -108,6 +108,7 @@ namespace UniOtomasyonUI
             this.Txt_Security_Code.Location = new System.Drawing.Point(181, 167);
             this.Txt_Security_Code.Mask = "00000";
             this.Txt_Security_Code.Name = "Txt_Security_Code";
+            this.Txt_Security_Code.PromptChar = ' ';
             this.Txt_Security_Code.Size = new System.Drawing.Size(154, 23);
             this.Txt_Security_Code.TabIndex = 2;
             this.Txt_Security_Code.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
