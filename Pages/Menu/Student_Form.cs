@@ -34,5 +34,11 @@ namespace UniOtomasyonUI.Pages
         {
             this.Visible = false;
         }
+
+        private void Panel_Note_Click(object sender, EventArgs e)
+        {
+            Lessons_Form form = new Lessons_Form();
+            form.ShowDialog();
+        }
     }
 }
