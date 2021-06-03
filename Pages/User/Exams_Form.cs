@@ -63,12 +63,28 @@ namespace UniOtomasyonUI.Pages.User
                             exam.UserLesson.lesson.code,
                             exam.UserLesson.lesson.name,
                             exam.UserLesson.lesson.credit,
-                            exam.Type,
+                            GetExamTypeDescription(exam.Type),
                             exam.Score,
-                            exam.announcementDate);
+                            exam.announcementDate.ToShortDateString());
                     }
                 }
             }
+        }
+
+
+        /// <summary>
+        /// Get type Turkish description by exam type
+        /// </summary>
+        private string GetExamTypeDescription(string examType)
+        {
+            switch (examType)
+            {
+                case "MID": examType = "Vize"; break;
+                case "PROJECT": examType = "Proje"; break;
+                case "FINAL": examType = "Final"; break;
+                case "MAKEUP": examType = "Büt"; break;
+            }
+            return examType;
         }
     }
 }
