@@ -31,7 +31,7 @@ namespace UniOtomasyonUI.Pages.User
         private void GetLessons()
         {
             restManager.AddCookie("token", Program.ACCESS_TOKEN);
-            RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("/v1/user/lessons", Method.GET);
+            RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("/v1/users/lessons", Method.GET);
             if (restManager.ReadResponseField(responseObject, "success") == false.ToString())
             {
                 MessageBox.Show(restManager.ReadResponseField(responseObject, "message"), "Bilgilendirme", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
