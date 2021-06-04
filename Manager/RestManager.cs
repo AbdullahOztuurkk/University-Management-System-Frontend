@@ -39,7 +39,7 @@ namespace UniOtomasyonUI.Manager
             {
                 foreach (KeyValuePair<string, object> item in parameter_table)
                 {
-                    request.AddParameter(item.Key, item.Value);
+                    request.AddParameter(item.Key, item.Value,ParameterType.QueryString);
                 }
             }
             if (cookie_count > 0)
@@ -63,8 +63,8 @@ namespace UniOtomasyonUI.Manager
         /// <param name="parameterModel">Parameter Value</param>
         public void AddParameter(string name, object parameterModel)
         {
-            parameter_count++;
             parameter_table.Add(name, parameterModel);
+            parameter_count++;
         }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace UniOtomasyonUI.Manager
         /// <param name="value">Cookie Value</param>
         public void AddCookie(string key, string value)
         {
-            cookie_count++;
             cookie_table.Add(key, value);
+            cookie_count++;
         }
 
         /// <summary>
