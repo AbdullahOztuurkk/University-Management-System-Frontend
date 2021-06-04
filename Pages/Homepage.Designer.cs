@@ -32,7 +32,6 @@ namespace UniOtomasyonUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Homepage));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.Txt_Code = new System.Windows.Forms.Label();
             this.Txt_Security_Code = new System.Windows.Forms.MaskedTextBox();
             this.Btn_Login = new System.Windows.Forms.Button();
@@ -42,8 +41,10 @@ namespace UniOtomasyonUI
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.PB_Security = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Security)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -67,7 +68,7 @@ namespace UniOtomasyonUI
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.PB_Security);
             this.panel2.Controls.Add(this.Txt_Code);
             this.panel2.Controls.Add(this.Txt_Security_Code);
             this.panel2.Controls.Add(this.Btn_Login);
@@ -82,16 +83,6 @@ namespace UniOtomasyonUI
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(382, 309);
             this.panel2.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(336, 166);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(23, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "➕";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Txt_Code
             // 
@@ -187,6 +178,18 @@ namespace UniOtomasyonUI
             this.label4.TabIndex = 0;
             this.label4.Text = "Sisteme Giriş";
             // 
+            // PB_Security
+            // 
+            this.PB_Security.BackColor = System.Drawing.Color.Transparent;
+            this.PB_Security.Image = global::UniOtomasyonUI.Properties.Resources.refresh;
+            this.PB_Security.Location = new System.Drawing.Point(336, 167);
+            this.PB_Security.Name = "PB_Security";
+            this.PB_Security.Size = new System.Drawing.Size(23, 23);
+            this.PB_Security.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PB_Security.TabIndex = 7;
+            this.PB_Security.TabStop = false;
+            this.PB_Security.Click += new System.EventHandler(this.PB_Security_Click);
+            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -203,6 +206,7 @@ namespace UniOtomasyonUI
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Security)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,6 +225,6 @@ namespace UniOtomasyonUI
         private System.Windows.Forms.Button Btn_Login;
         private System.Windows.Forms.MaskedTextBox Txt_Security_Code;
         private System.Windows.Forms.Label Txt_Code;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox PB_Security;
     }
 }

@@ -89,7 +89,6 @@ namespace UniOtomasyonUI
         /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
-            Txt_Code.Text = Create_Security_Code();
         }
 
         /// <summary>
@@ -120,6 +119,11 @@ namespace UniOtomasyonUI
             else if (Txt_Security_Code.Text != Txt_Code.Text) { errorMessage = Messages.Invalid_Security_Code; }
 
             return errorMessage == null ? true : false;
+        }
+
+        private void PB_Security_Click(object sender, EventArgs e)
+        {
+            Txt_Code.Text = Create_Security_Code();
         }
     }
 }
