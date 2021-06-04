@@ -48,11 +48,16 @@ namespace UniOtomasyonUI.Pages.Management
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.DG_Lesson = new System.Windows.Forms.DataGridView();
+            this.DG_User = new System.Windows.Forms.DataGridView();
+            this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DG_Lesson)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DG_User)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -208,14 +213,14 @@ namespace UniOtomasyonUI.Pages.Management
             "Yetkili"});
             this.CB_Role.Location = new System.Drawing.Point(133, 120);
             this.CB_Role.Name = "CB_Role";
-            this.CB_Role.Size = new System.Drawing.Size(227, 23);
+            this.CB_Role.Size = new System.Drawing.Size(229, 23);
             this.CB_Role.TabIndex = 5;
             // 
             // Txt_Name
             // 
             this.Txt_Name.Location = new System.Drawing.Point(133, 36);
             this.Txt_Name.Name = "Txt_Name";
-            this.Txt_Name.Size = new System.Drawing.Size(227, 23);
+            this.Txt_Name.Size = new System.Drawing.Size(229, 23);
             this.Txt_Name.TabIndex = 1;
             // 
             // label6
@@ -247,7 +252,7 @@ namespace UniOtomasyonUI.Pages.Management
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.DG_Lesson);
+            this.groupBox1.Controls.Add(this.DG_User);
             this.groupBox1.Location = new System.Drawing.Point(9, 437);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(763, 264);
@@ -255,24 +260,60 @@ namespace UniOtomasyonUI.Pages.Management
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tüm Kullanıcılar";
             // 
-            // DG_Lesson
+            // DG_User
             // 
-            this.DG_Lesson.AllowUserToAddRows = false;
-            this.DG_Lesson.AllowUserToDeleteRows = false;
-            this.DG_Lesson.AllowUserToResizeColumns = false;
-            this.DG_Lesson.AllowUserToResizeRows = false;
-            this.DG_Lesson.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DG_Lesson.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.DG_Lesson.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DG_Lesson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DG_Lesson.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DG_Lesson.Location = new System.Drawing.Point(3, 19);
-            this.DG_Lesson.MultiSelect = false;
-            this.DG_Lesson.Name = "DG_Lesson";
-            this.DG_Lesson.ReadOnly = true;
-            this.DG_Lesson.RowTemplate.Height = 25;
-            this.DG_Lesson.Size = new System.Drawing.Size(757, 242);
-            this.DG_Lesson.TabIndex = 0;
+            this.DG_User.AllowUserToAddRows = false;
+            this.DG_User.AllowUserToDeleteRows = false;
+            this.DG_User.AllowUserToResizeColumns = false;
+            this.DG_User.AllowUserToResizeRows = false;
+            this.DG_User.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DG_User.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.DG_User.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DG_User.ColumnHeadersHeight = 38;
+            this.DG_User.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.UserId,
+            this.UserName,
+            this.UserSurname,
+            this.UserStatus,
+            this.Email});
+            this.DG_User.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DG_User.Location = new System.Drawing.Point(3, 19);
+            this.DG_User.MultiSelect = false;
+            this.DG_User.Name = "DG_User";
+            this.DG_User.ReadOnly = true;
+            this.DG_User.RowTemplate.Height = 25;
+            this.DG_User.Size = new System.Drawing.Size(757, 242);
+            this.DG_User.TabIndex = 0;
+            // 
+            // UserId
+            // 
+            this.UserId.HeaderText = "Id";
+            this.UserId.Name = "UserId";
+            this.UserId.ReadOnly = true;
+            // 
+            // UserName
+            // 
+            this.UserName.HeaderText = "Adı";
+            this.UserName.Name = "UserName";
+            this.UserName.ReadOnly = true;
+            // 
+            // UserSurname
+            // 
+            this.UserSurname.HeaderText = "Soyadı";
+            this.UserSurname.Name = "UserSurname";
+            this.UserSurname.ReadOnly = true;
+            // 
+            // UserStatus
+            // 
+            this.UserStatus.HeaderText = "Durum";
+            this.UserStatus.Name = "UserStatus";
+            this.UserStatus.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "İletişim Adresi";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
             // 
             // User_Management_Form
             // 
@@ -284,13 +325,15 @@ namespace UniOtomasyonUI.Pages.Management
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "User_Management_Form";
             this.Text = "Ders Yönetim Paneli";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.User_Management_Form_FormClosed);
+            this.Load += new System.EventHandler(this.User_Management_Form_Load);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DG_Lesson)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DG_User)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,7 +343,7 @@ namespace UniOtomasyonUI.Pages.Management
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView DG_Lesson;
+        private System.Windows.Forms.DataGridView DG_User;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button Btn_User_Delete;
         private System.Windows.Forms.ComboBox CB_Role;
@@ -317,5 +360,10 @@ namespace UniOtomasyonUI.Pages.Management
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox Txt_Password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserSurname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
     }
 }
