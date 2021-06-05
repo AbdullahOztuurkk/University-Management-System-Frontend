@@ -35,7 +35,7 @@ namespace UniOtomasyonUI.Pages.Management
             restManager.AddCookie("token", Program.ACCESS_TOKEN);
             //restManager.AddParameter("departmentId", departmentId);
             RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("/v1/users/students", Method.GET);
-            if (restManager.ReadResponseField(responseObject, "success") == true.ToString())
+            if (restManager.IsOperationSuccessful(responseObject))
             {
                 List<Models.User> users = JsonConvert.DeserializeObject<List<Models.User>>(restManager.ReadResponseField(responseObject, "data").ToString());
                 foreach (var user in users)
@@ -46,10 +46,6 @@ namespace UniOtomasyonUI.Pages.Management
                                     GetStatusDescription(user.Status),
                                     user.Email);
                 }   
-            }
-            else if (restManager.ReadResponseField(responseObject, "success") == false.ToString())
-            {
-                MessageBox.Show(restManager.ReadResponseField(responseObject, "message"), "Bilgilendirme", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
         }
 

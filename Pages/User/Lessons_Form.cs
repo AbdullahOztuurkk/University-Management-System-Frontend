@@ -32,11 +32,7 @@ namespace UniOtomasyonUI.Pages.User
         {
             restManager.AddCookie("token", Program.ACCESS_TOKEN);
             RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("/v1/users/lessons", Method.GET);
-            if (restManager.ReadResponseField(responseObject, "success") == false.ToString())
-            {
-                MessageBox.Show(restManager.ReadResponseField(responseObject, "message"), "Bilgilendirme", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-            }
-            else if (restManager.ReadResponseField(responseObject, "success") == true.ToString())
+            if (restManager.IsOperationSuccessful(responseObject))
             {
                 List<UserLesson> UserLessonList = JsonConvert.DeserializeObject<List<UserLesson>>(restManager.ReadResponseField(responseObject, "data"));
                 if (UserLessonList.Count > 0)

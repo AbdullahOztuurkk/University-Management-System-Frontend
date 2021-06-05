@@ -30,11 +30,7 @@ namespace UniOtomasyonUI
             {
                 var userLoginDto = new UserLoginDto() { Email = Txt_User_Email.Text, Password = Txt_User_Password.Text };
                 RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("/v1/auth/login", Method.POST, userLoginDto);
-                if (restManager.ReadResponseField(responseObject, "success") == false.ToString())
-                {
-                    MessageBox.Show(restManager.ReadResponseField(responseObject, "message"), "Bilgilendirme", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                }
-                else if (restManager.ReadResponseField(responseObject, "success") == true.ToString())
+                if (restManager.IsOperationSuccessful(responseObject))
                 {
                     Program.ACCESS_TOKEN = responseObject.Cookies[0].Value;
                     restManager.AddCookie("token", Program.ACCESS_TOKEN);

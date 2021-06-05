@@ -48,11 +48,7 @@ namespace UniOtomasyonUI.Pages.User
             GetExamsDto examsDto = new GetExamsDto { Id = CurrentUser.Id };
             restManager.AddCookie("token", Program.ACCESS_TOKEN);
             RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("v1/exams/", Method.GET, examsDto);
-            if (restManager.ReadResponseField(responseObject, "success") == false.ToString())
-            {
-                MessageBox.Show(restManager.ReadResponseField(responseObject, "message"), "Bilgilendirme", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-            }
-            else if (restManager.ReadResponseField(responseObject, "success") == true.ToString())
+            if (restManager.IsOperationSuccessful(responseObject))
             {
                 List<Exam> Exams = JsonConvert.DeserializeObject<List<Exam>>(restManager.ReadResponseField(responseObject, "data"));
                 if (Exams.Count > 0)
