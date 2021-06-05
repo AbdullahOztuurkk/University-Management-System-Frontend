@@ -45,12 +45,23 @@ namespace UniOtomasyonUI.Pages.Administration
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DG_Lesson = new System.Windows.Forms.DataGridView();
+            this.LessonId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lessonCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LessonName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LessonCredit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.CB_Faculty = new System.Windows.Forms.ComboBox();
+            this.CB_Department = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Btn_List = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DG_Lesson)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -210,9 +221,9 @@ namespace UniOtomasyonUI.Pages.Administration
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.DG_Lesson);
-            this.groupBox1.Location = new System.Drawing.Point(9, 437);
+            this.groupBox1.Location = new System.Drawing.Point(9, 467);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(763, 264);
+            this.groupBox1.Size = new System.Drawing.Size(763, 234);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tüm Dersler";
@@ -226,28 +237,136 @@ namespace UniOtomasyonUI.Pages.Administration
             this.DG_Lesson.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DG_Lesson.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.DG_Lesson.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DG_Lesson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DG_Lesson.ColumnHeadersHeight = 38;
+            this.DG_Lesson.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.LessonId,
+            this.lessonCode,
+            this.LessonName,
+            this.LessonCredit});
             this.DG_Lesson.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DG_Lesson.Location = new System.Drawing.Point(3, 19);
             this.DG_Lesson.MultiSelect = false;
             this.DG_Lesson.Name = "DG_Lesson";
             this.DG_Lesson.ReadOnly = true;
             this.DG_Lesson.RowTemplate.Height = 25;
-            this.DG_Lesson.Size = new System.Drawing.Size(757, 242);
+            this.DG_Lesson.Size = new System.Drawing.Size(757, 212);
             this.DG_Lesson.TabIndex = 0;
+            // 
+            // LessonId
+            // 
+            this.LessonId.HeaderText = "Id";
+            this.LessonId.Name = "LessonId";
+            this.LessonId.ReadOnly = true;
+            // 
+            // lessonCode
+            // 
+            this.lessonCode.HeaderText = "Ders Kodu";
+            this.lessonCode.Name = "lessonCode";
+            this.lessonCode.ReadOnly = true;
+            // 
+            // LessonName
+            // 
+            this.LessonName.HeaderText = "Ders Adı";
+            this.LessonName.Name = "LessonName";
+            this.LessonName.ReadOnly = true;
+            // 
+            // LessonCredit
+            // 
+            this.LessonCredit.HeaderText = "Kredi";
+            this.LessonCredit.Name = "LessonCredit";
+            this.LessonCredit.ReadOnly = true;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 7;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.5F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.5F));
+            this.tableLayoutPanel2.Controls.Add(this.label8, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.CB_Faculty, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.CB_Department, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label9, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Btn_List, 5, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 435);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(780, 26);
+            this.tableLayoutPanel2.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Location = new System.Drawing.Point(22, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(142, 26);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Fakülte Seçiniz :";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CB_Faculty
+            // 
+            this.CB_Faculty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CB_Faculty.FormattingEnabled = true;
+            this.CB_Faculty.Location = new System.Drawing.Point(170, 3);
+            this.CB_Faculty.Name = "CB_Faculty";
+            this.CB_Faculty.Size = new System.Drawing.Size(142, 23);
+            this.CB_Faculty.TabIndex = 1;
+            this.CB_Faculty.SelectedIndexChanged += new System.EventHandler(this.CB_Faculty_SelectedIndexChanged);
+            // 
+            // CB_Department
+            // 
+            this.CB_Department.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CB_Department.FormattingEnabled = true;
+            this.CB_Department.Location = new System.Drawing.Point(466, 3);
+            this.CB_Department.Name = "CB_Department";
+            this.CB_Department.Size = new System.Drawing.Size(142, 23);
+            this.CB_Department.TabIndex = 2;
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Location = new System.Drawing.Point(318, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(142, 26);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Bölüm Seçiniz :";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Btn_List
+            // 
+            this.Btn_List.BackColor = System.Drawing.Color.LimeGreen;
+            this.Btn_List.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_List.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_List.ForeColor = System.Drawing.Color.White;
+            this.Btn_List.Location = new System.Drawing.Point(611, 0);
+            this.Btn_List.Margin = new System.Windows.Forms.Padding(0);
+            this.Btn_List.Name = "Btn_List";
+            this.Btn_List.Size = new System.Drawing.Size(148, 26);
+            this.Btn_List.TabIndex = 4;
+            this.Btn_List.Text = "Listele";
+            this.Btn_List.UseVisualStyleBackColor = false;
+            this.Btn_List.Click += new System.EventHandler(this.Btn_List_Click);
             // 
             // Lesson_Management_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 761);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Lesson_Management_Form";
             this.Text = "Ders Yönetim Paneli";
+            this.Load += new System.EventHandler(this.Lesson_Management_Form_Load);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
+            this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -255,6 +374,7 @@ namespace UniOtomasyonUI.Pages.Administration
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DG_Lesson)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +397,15 @@ namespace UniOtomasyonUI.Pages.Administration
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Btn_Lesson_Add;
         private System.Windows.Forms.Button Btn_Lesson_Update;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox CB_Faculty;
+        private System.Windows.Forms.ComboBox CB_Department;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LessonId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lessonCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LessonName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LessonCredit;
+        private System.Windows.Forms.Button Btn_List;
     }
 }
