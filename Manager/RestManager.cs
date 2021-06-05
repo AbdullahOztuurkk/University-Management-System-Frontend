@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using RestSharp;
 using RestSharp.Serializers.NewtonsoftJson;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace UniOtomasyonUI.Manager
 {
@@ -98,6 +99,19 @@ namespace UniOtomasyonUI.Manager
         {
             var JObjectResponse = ResponseToJson(response);
             return JObjectResponse.GetValue(name).ToString();
+        }
+
+        public bool IsOperationSuccessful(IRestResponse response)
+        {
+            if (ReadResponseField(response, "success") == true.ToString())
+            {
+                return true;
+            }
+            else if (ReadResponseField(response, "success") == false.ToString())
+            {
+                MessageBox.Show(ReadResponseField(response, "message"), "Bilgilendirme", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+            return false;
         }
     }
 }
