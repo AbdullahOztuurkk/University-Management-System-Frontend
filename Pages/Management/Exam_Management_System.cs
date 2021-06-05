@@ -47,5 +47,10 @@ namespace UniOtomasyonUI.Pages.Management
                 }
             }
         }
+
+        private void Exam_Management_System_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
+        {
+            FormManager.OpenHiddenForm(new Administrator_Form().Name);
+        }
     }
 }

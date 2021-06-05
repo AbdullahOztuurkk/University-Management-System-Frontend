@@ -36,5 +36,10 @@ namespace UniOtomasyonUI.Pages
             User_Management_Form form = new User_Management_Form();
             form.ShowDialog();
         }
+
+        private void tableLayoutPanel1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        {
+
+        }
     }
 }

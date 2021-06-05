@@ -19,7 +19,7 @@ namespace UniOtomasyonUI.Pages.Management
 
         private void User_Management_Form_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FormManager.OpenHiddenForm(new Student_Form().Name, new Lecturer_Form().Name, new Administrator_Form().Name);
+            FormManager.OpenHiddenForm(new Administrator_Form().Name);
         }
 
         private void User_Management_Form_Load(object sender, EventArgs e)

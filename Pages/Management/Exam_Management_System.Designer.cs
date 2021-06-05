@@ -299,6 +299,7 @@ namespace UniOtomasyonUI.Pages.Management
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Exam_Management_System";
             this.Text = "Ders Yönetim Paneli";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Exam_Management_System_FormClosed);
             this.Load += new System.EventHandler(this.Exam_Management_System_Load);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);

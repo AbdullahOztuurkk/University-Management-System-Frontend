@@ -57,13 +57,13 @@ namespace UniOtomasyonUI.Pages
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 7;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.5F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.5F));
             this.tableLayoutPanel1.Controls.Add(this.Panel_User, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.Panel_Settings, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.Panel_Informations, 3, 3);
@@ -72,12 +72,13 @@ namespace UniOtomasyonUI.Pages
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(763, 563);
             this.tableLayoutPanel1.TabIndex = 9;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // Panel_User
             // 
@@ -85,9 +86,9 @@ namespace UniOtomasyonUI.Pages
             this.Panel_User.Controls.Add(this.label4);
             this.Panel_User.Controls.Add(this.pictureBox2);
             this.Panel_User.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_User.Location = new System.Drawing.Point(25, 31);
+            this.Panel_User.Location = new System.Drawing.Point(22, 31);
             this.Panel_User.Name = "Panel_User";
-            this.Panel_User.Size = new System.Drawing.Size(207, 219);
+            this.Panel_User.Size = new System.Drawing.Size(222, 233);
             this.Panel_User.TabIndex = 0;
             this.Panel_User.Click += new System.EventHandler(this.Panel_User_Click);
             // 
@@ -96,7 +97,7 @@ namespace UniOtomasyonUI.Pages
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(0, 178);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(207, 41);
+            this.label4.Size = new System.Drawing.Size(222, 41);
             this.label4.TabIndex = 1;
             this.label4.Text = "Kullanıcılar";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -106,7 +107,7 @@ namespace UniOtomasyonUI.Pages
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.pictureBox2.Image = global::UniOtomasyonUI.Properties.Resources.user;
-            this.pictureBox2.Location = new System.Drawing.Point(26, 22);
+            this.pictureBox2.Location = new System.Drawing.Point(34, 22);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(156, 153);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -120,9 +121,9 @@ namespace UniOtomasyonUI.Pages
             this.Panel_Settings.Controls.Add(this.label10);
             this.Panel_Settings.Controls.Add(this.pictureBox4);
             this.Panel_Settings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_Settings.Location = new System.Drawing.Point(527, 31);
+            this.Panel_Settings.Location = new System.Drawing.Point(516, 31);
             this.Panel_Settings.Name = "Panel_Settings";
-            this.Panel_Settings.Size = new System.Drawing.Size(207, 219);
+            this.Panel_Settings.Size = new System.Drawing.Size(222, 233);
             this.Panel_Settings.TabIndex = 2;
             this.Panel_Settings.Click += new System.EventHandler(this.Panel_Notes_Click);
             // 
@@ -131,7 +132,7 @@ namespace UniOtomasyonUI.Pages
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.Location = new System.Drawing.Point(0, 178);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(207, 41);
+            this.label10.Size = new System.Drawing.Size(222, 41);
             this.label10.TabIndex = 3;
             this.label10.Text = "Notlar";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -141,7 +142,7 @@ namespace UniOtomasyonUI.Pages
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.pictureBox4.Image = global::UniOtomasyonUI.Properties.Resources.Exams;
-            this.pictureBox4.Location = new System.Drawing.Point(28, 22);
+            this.pictureBox4.Location = new System.Drawing.Point(35, 22);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(156, 153);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -155,9 +156,9 @@ namespace UniOtomasyonUI.Pages
             this.Panel_Informations.Controls.Add(this.label6);
             this.Panel_Informations.Controls.Add(this.pictureBox5);
             this.Panel_Informations.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_Informations.Location = new System.Drawing.Point(276, 312);
+            this.Panel_Informations.Location = new System.Drawing.Point(269, 298);
             this.Panel_Informations.Name = "Panel_Informations";
-            this.Panel_Informations.Size = new System.Drawing.Size(207, 219);
+            this.Panel_Informations.Size = new System.Drawing.Size(222, 233);
             this.Panel_Informations.TabIndex = 5;
             this.Panel_Informations.Click += new System.EventHandler(this.Panel_Informations_Click);
             // 
@@ -166,7 +167,7 @@ namespace UniOtomasyonUI.Pages
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(0, 177);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(207, 42);
+            this.label6.Size = new System.Drawing.Size(222, 42);
             this.label6.TabIndex = 8;
             this.label6.Text = "Bilgilerim";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -176,7 +177,7 @@ namespace UniOtomasyonUI.Pages
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.pictureBox5.Image = global::UniOtomasyonUI.Properties.Resources.about;
-            this.pictureBox5.Location = new System.Drawing.Point(25, 21);
+            this.pictureBox5.Location = new System.Drawing.Point(36, 21);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(156, 153);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -190,9 +191,9 @@ namespace UniOtomasyonUI.Pages
             this.Panel_Lessons.Controls.Add(this.label5);
             this.Panel_Lessons.Controls.Add(this.pictureBox3);
             this.Panel_Lessons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_Lessons.Location = new System.Drawing.Point(276, 31);
+            this.Panel_Lessons.Location = new System.Drawing.Point(269, 31);
             this.Panel_Lessons.Name = "Panel_Lessons";
-            this.Panel_Lessons.Size = new System.Drawing.Size(207, 219);
+            this.Panel_Lessons.Size = new System.Drawing.Size(222, 233);
             this.Panel_Lessons.TabIndex = 6;
             this.Panel_Lessons.Click += new System.EventHandler(this.Panel_Lessons_Click);
             // 
@@ -201,7 +202,7 @@ namespace UniOtomasyonUI.Pages
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(0, 178);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(207, 41);
+            this.label5.Size = new System.Drawing.Size(222, 41);
             this.label5.TabIndex = 2;
             this.label5.Text = "Dersler";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -211,7 +212,7 @@ namespace UniOtomasyonUI.Pages
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::UniOtomasyonUI.Properties.Resources.education;
-            this.pictureBox3.Location = new System.Drawing.Point(25, 22);
+            this.pictureBox3.Location = new System.Drawing.Point(36, 22);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(156, 153);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
