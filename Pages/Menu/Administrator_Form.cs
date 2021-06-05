@@ -27,7 +27,7 @@ namespace UniOtomasyonUI.Pages
 
         private void Panel_Notes_Click(object sender, EventArgs e)
         {
-            Note_Management_System form = new Note_Management_System();
+            Exam_Management_System form = new Exam_Management_System();
             form.ShowDialog();
         }
 
