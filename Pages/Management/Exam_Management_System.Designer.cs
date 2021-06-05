@@ -37,12 +37,6 @@ namespace UniOtomasyonUI.Pages.Management
             this.Btn_Lesson_Delete = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DG_Exam = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.CB_Faculty = new System.Windows.Forms.ComboBox();
-            this.CB_Department = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.Btn_List = new System.Windows.Forms.Button();
             this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LessonCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +45,12 @@ namespace UniOtomasyonUI.Pages.Management
             this.ExamType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExamScore = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExamAnnouncementDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.CB_Faculty = new System.Windows.Forms.ComboBox();
+            this.CB_Department = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Btn_List = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -166,6 +166,54 @@ namespace UniOtomasyonUI.Pages.Management
             this.DG_Exam.Size = new System.Drawing.Size(757, 212);
             this.DG_Exam.TabIndex = 0;
             // 
+            // UserName
+            // 
+            this.UserName.HeaderText = "Kullanıcı Adı";
+            this.UserName.Name = "UserName";
+            this.UserName.ReadOnly = true;
+            // 
+            // UserSurname
+            // 
+            this.UserSurname.HeaderText = "Kullanıcı Soyadı";
+            this.UserSurname.Name = "UserSurname";
+            this.UserSurname.ReadOnly = true;
+            // 
+            // LessonCode
+            // 
+            this.LessonCode.HeaderText = "Ders Kodu";
+            this.LessonCode.Name = "LessonCode";
+            this.LessonCode.ReadOnly = true;
+            // 
+            // LessonName
+            // 
+            this.LessonName.HeaderText = "Ders Adı";
+            this.LessonName.Name = "LessonName";
+            this.LessonName.ReadOnly = true;
+            // 
+            // LessonCredit
+            // 
+            this.LessonCredit.HeaderText = "Kredi";
+            this.LessonCredit.Name = "LessonCredit";
+            this.LessonCredit.ReadOnly = true;
+            // 
+            // ExamType
+            // 
+            this.ExamType.HeaderText = "Sınav Türü";
+            this.ExamType.Name = "ExamType";
+            this.ExamType.ReadOnly = true;
+            // 
+            // ExamScore
+            // 
+            this.ExamScore.HeaderText = "Not";
+            this.ExamScore.Name = "ExamScore";
+            this.ExamScore.ReadOnly = true;
+            // 
+            // ExamAnnouncementDate
+            // 
+            this.ExamAnnouncementDate.HeaderText = "Yayınlanma Tarih";
+            this.ExamAnnouncementDate.Name = "ExamAnnouncementDate";
+            this.ExamAnnouncementDate.ReadOnly = true;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 7;
@@ -239,54 +287,6 @@ namespace UniOtomasyonUI.Pages.Management
             this.Btn_List.TabIndex = 4;
             this.Btn_List.Text = "Listele";
             this.Btn_List.UseVisualStyleBackColor = false;
-            // 
-            // UserName
-            // 
-            this.UserName.HeaderText = "Kullanıcı Adı";
-            this.UserName.Name = "UserName";
-            this.UserName.ReadOnly = true;
-            // 
-            // UserSurname
-            // 
-            this.UserSurname.HeaderText = "Kullanıcı Soyadı";
-            this.UserSurname.Name = "UserSurname";
-            this.UserSurname.ReadOnly = true;
-            // 
-            // LessonCode
-            // 
-            this.LessonCode.HeaderText = "Ders Kodu";
-            this.LessonCode.Name = "LessonCode";
-            this.LessonCode.ReadOnly = true;
-            // 
-            // LessonName
-            // 
-            this.LessonName.HeaderText = "Ders Adı";
-            this.LessonName.Name = "LessonName";
-            this.LessonName.ReadOnly = true;
-            // 
-            // LessonCredit
-            // 
-            this.LessonCredit.HeaderText = "Kredi";
-            this.LessonCredit.Name = "LessonCredit";
-            this.LessonCredit.ReadOnly = true;
-            // 
-            // ExamType
-            // 
-            this.ExamType.HeaderText = "Sınav Türü";
-            this.ExamType.Name = "ExamType";
-            this.ExamType.ReadOnly = true;
-            // 
-            // ExamScore
-            // 
-            this.ExamScore.HeaderText = "Not";
-            this.ExamScore.Name = "ExamScore";
-            this.ExamScore.ReadOnly = true;
-            // 
-            // ExamAnnouncementDate
-            // 
-            this.ExamAnnouncementDate.HeaderText = "Yayınlanma Tarih";
-            this.ExamAnnouncementDate.Name = "ExamAnnouncementDate";
-            this.ExamAnnouncementDate.ReadOnly = true;
             // 
             // Exam_Management_System
             // 
