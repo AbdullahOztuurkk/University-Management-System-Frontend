@@ -75,7 +75,7 @@ namespace UniOtomasyonUI.Pages.User
         /// <summary>
         /// Get type Turkish description by exam type
         /// </summary>
-        private string GetExamTypeDescription(string examType)
+        public static string GetExamTypeDescription(string examType)
         {
             switch (examType)
             {
