@@ -32,13 +32,17 @@ namespace UniOtomasyonUI.Pages.Administration
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lesson_Management_Form));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Txt_Code = new System.Windows.Forms.TextBox();
+            this.CB_Department_Input = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.Btn_Lesson_Add = new System.Windows.Forms.Button();
             this.Btn_Lesson_Update = new System.Windows.Forms.Button();
             this.Btn_Lesson_Delete = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.CB_Faculty_Input = new System.Windows.Forms.ComboBox();
+            this.NUD_Class = new System.Windows.Forms.NumericUpDown();
+            this.Txt_Credit = new System.Windows.Forms.NumericUpDown();
+            this.Txt_Name = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -57,8 +61,8 @@ namespace UniOtomasyonUI.Pages.Administration
             this.Btn_List = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Class)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Txt_Credit)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DG_Lesson)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -66,11 +70,11 @@ namespace UniOtomasyonUI.Pages.Administration
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 0);
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 148);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -80,26 +84,63 @@ namespace UniOtomasyonUI.Pages.Administration
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.Txt_Code);
+            this.groupBox2.Controls.Add(this.CB_Department_Input);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.Btn_Lesson_Add);
             this.groupBox2.Controls.Add(this.Btn_Lesson_Update);
             this.groupBox2.Controls.Add(this.Btn_Lesson_Delete);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.numericUpDown2);
-            this.groupBox2.Controls.Add(this.numericUpDown1);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.CB_Faculty_Input);
+            this.groupBox2.Controls.Add(this.NUD_Class);
+            this.groupBox2.Controls.Add(this.Txt_Credit);
+            this.groupBox2.Controls.Add(this.Txt_Name);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(210, 15);
+            this.groupBox2.Location = new System.Drawing.Point(15, 15);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(15);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox2.Size = new System.Drawing.Size(360, 253);
+            this.groupBox2.Size = new System.Drawing.Size(750, 253);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ders Ekle";
+            // 
+            // Txt_Code
+            // 
+            this.Txt_Code.Location = new System.Drawing.Point(502, 119);
+            this.Txt_Code.Name = "Txt_Code";
+            this.Txt_Code.Size = new System.Drawing.Size(227, 23);
+            this.Txt_Code.TabIndex = 14;
+            // 
+            // CB_Department_Input
+            // 
+            this.CB_Department_Input.FormattingEnabled = true;
+            this.CB_Department_Input.Location = new System.Drawing.Point(502, 78);
+            this.CB_Department_Input.Name = "CB_Department_Input";
+            this.CB_Department_Input.Size = new System.Drawing.Size(227, 23);
+            this.CB_Department_Input.TabIndex = 13;
+            // 
+            // label11
+            // 
+            this.label11.Location = new System.Drawing.Point(396, 117);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(100, 23);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Ders Kodu :";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(396, 77);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 23);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Bölüm :";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Btn_Lesson_Add
             // 
@@ -108,21 +149,23 @@ namespace UniOtomasyonUI.Pages.Administration
             this.Btn_Lesson_Add.FlatAppearance.BorderSize = 0;
             this.Btn_Lesson_Add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_Lesson_Add.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_Lesson_Add.Location = new System.Drawing.Point(250, 210);
+            this.Btn_Lesson_Add.Location = new System.Drawing.Point(641, 208);
             this.Btn_Lesson_Add.Name = "Btn_Lesson_Add";
             this.Btn_Lesson_Add.Size = new System.Drawing.Size(88, 28);
             this.Btn_Lesson_Add.TabIndex = 10;
             this.Btn_Lesson_Add.Text = "Ders Ekle";
             this.Btn_Lesson_Add.UseVisualStyleBackColor = false;
+            this.Btn_Lesson_Add.Click += new System.EventHandler(this.Btn_Lesson_Add_Click);
             // 
             // Btn_Lesson_Update
             // 
             this.Btn_Lesson_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.Btn_Lesson_Update.Enabled = false;
             this.Btn_Lesson_Update.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.Btn_Lesson_Update.FlatAppearance.BorderSize = 0;
             this.Btn_Lesson_Update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_Lesson_Update.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_Lesson_Update.Location = new System.Drawing.Point(134, 210);
+            this.Btn_Lesson_Update.Location = new System.Drawing.Point(522, 208);
             this.Btn_Lesson_Update.Name = "Btn_Lesson_Update";
             this.Btn_Lesson_Update.Size = new System.Drawing.Size(88, 28);
             this.Btn_Lesson_Update.TabIndex = 9;
@@ -136,55 +179,57 @@ namespace UniOtomasyonUI.Pages.Administration
             this.Btn_Lesson_Delete.FlatAppearance.BorderSize = 0;
             this.Btn_Lesson_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_Lesson_Delete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_Lesson_Delete.Location = new System.Drawing.Point(18, 210);
+            this.Btn_Lesson_Delete.Location = new System.Drawing.Point(403, 208);
             this.Btn_Lesson_Delete.Name = "Btn_Lesson_Delete";
             this.Btn_Lesson_Delete.Size = new System.Drawing.Size(88, 28);
             this.Btn_Lesson_Delete.TabIndex = 8;
             this.Btn_Lesson_Delete.Text = "Ders Sil";
             this.Btn_Lesson_Delete.UseVisualStyleBackColor = false;
+            this.Btn_Lesson_Delete.Click += new System.EventHandler(this.Btn_Lesson_Delete_Click);
             // 
-            // comboBox1
+            // CB_Faculty_Input
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(112, 119);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(227, 23);
-            this.comboBox1.TabIndex = 7;
+            this.CB_Faculty_Input.FormattingEnabled = true;
+            this.CB_Faculty_Input.Location = new System.Drawing.Point(502, 34);
+            this.CB_Faculty_Input.Name = "CB_Faculty_Input";
+            this.CB_Faculty_Input.Size = new System.Drawing.Size(227, 23);
+            this.CB_Faculty_Input.TabIndex = 7;
+            this.CB_Faculty_Input.SelectedIndexChanged += new System.EventHandler(this.CB_Faculty_Input_SelectedIndexChanged);
             // 
-            // numericUpDown2
+            // NUD_Class
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(112, 162);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.NUD_Class.Location = new System.Drawing.Point(111, 119);
+            this.NUD_Class.Maximum = new decimal(new int[] {
             4,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(227, 23);
-            this.numericUpDown2.TabIndex = 6;
+            this.NUD_Class.Name = "NUD_Class";
+            this.NUD_Class.Size = new System.Drawing.Size(227, 23);
+            this.NUD_Class.TabIndex = 6;
             // 
-            // numericUpDown1
+            // Txt_Credit
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(112, 78);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            10,
+            this.Txt_Credit.Location = new System.Drawing.Point(112, 77);
+            this.Txt_Credit.Maximum = new decimal(new int[] {
+            11,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(227, 23);
-            this.numericUpDown1.TabIndex = 5;
+            this.Txt_Credit.Name = "Txt_Credit";
+            this.Txt_Credit.Size = new System.Drawing.Size(227, 23);
+            this.Txt_Credit.TabIndex = 5;
             // 
-            // textBox1
+            // Txt_Name
             // 
-            this.textBox1.Location = new System.Drawing.Point(112, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 23);
-            this.textBox1.TabIndex = 4;
+            this.Txt_Name.Location = new System.Drawing.Point(112, 35);
+            this.Txt_Name.Name = "Txt_Name";
+            this.Txt_Name.Size = new System.Drawing.Size(227, 23);
+            this.Txt_Name.TabIndex = 4;
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(6, 160);
+            this.label7.Location = new System.Drawing.Point(6, 118);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 23);
             this.label7.TabIndex = 3;
@@ -193,11 +238,11 @@ namespace UniOtomasyonUI.Pages.Administration
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(6, 118);
+            this.label6.Location = new System.Drawing.Point(396, 33);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 23);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Bölüm :";
+            this.label6.Text = "Fakülte :";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
@@ -370,8 +415,8 @@ namespace UniOtomasyonUI.Pages.Administration
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUD_Class)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Txt_Credit)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DG_Lesson)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -387,10 +432,10 @@ namespace UniOtomasyonUI.Pages.Administration
         private System.Windows.Forms.DataGridView DG_Lesson;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button Btn_Lesson_Delete;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox CB_Faculty_Input;
+        private System.Windows.Forms.NumericUpDown NUD_Class;
+        private System.Windows.Forms.NumericUpDown Txt_Credit;
+        private System.Windows.Forms.TextBox Txt_Name;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -407,5 +452,9 @@ namespace UniOtomasyonUI.Pages.Administration
         private System.Windows.Forms.DataGridViewTextBoxColumn LessonName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LessonCredit;
         private System.Windows.Forms.Button Btn_List;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox Txt_Code;
+        private System.Windows.Forms.ComboBox CB_Department_Input;
     }
 }

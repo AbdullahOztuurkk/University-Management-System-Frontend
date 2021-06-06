@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using UniOtomasyonUI.Constants;
 using UniOtomasyonUI.Manager;
 using UniOtomasyonUI.Models.Department;
 using UniOtomasyonUI.Models.Faculty;
@@ -21,6 +22,7 @@ namespace UniOtomasyonUI.Pages.Administration
         List<Faculty> faculties;
         List<Department> departments;
         List<Lesson> lessons;
+        string errorMessage;
         public Lesson_Management_Form()
         {
             InitializeComponent();
@@ -29,43 +31,51 @@ namespace UniOtomasyonUI.Pages.Administration
             departments = new List<Department>();
             lessons = new List<Lesson>();
         }
+        private void Lesson_Management_Form_Load(object sender, EventArgs e)
+        {
+            GetFaculties(CB_Faculty);
+            GetFaculties(CB_Faculty_Input);
+        }
+
+        private void CB_Faculty_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetDepartments(CB_Department, CB_Faculty);
+        }
+        private void CB_Faculty_Input_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetDepartments(CB_Department_Input, CB_Faculty_Input);
+        }
 
         /// <summary>
         /// Get faculties in system
         /// </summary>
-        private void GetFaculties()
+        private void GetFaculties(ComboBox CBEntity)
         {
             restManager.AddCookie("token", Program.ACCESS_TOKEN);
             RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("/v1/faculties", Method.GET);
             if (restManager.IsOperationSuccessful(responseObject))
             {
                 faculties = JsonConvert.DeserializeObject<List<Faculty>>(restManager.ReadResponseField(responseObject, "datas").ToString());
-                CB_Faculty.DataSource = faculties;
-                CB_Faculty.DisplayMember = "name";
+                CBEntity.DataSource = faculties;
+                CBEntity.DisplayMember = "name";
             }
         }
 
         /// <summary>
-        /// Get departments when the faculty index has been changed
+        /// Get departments in system by facultyId
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CB_Faculty_SelectedIndexChanged(object sender, EventArgs e)
+        private void GetDepartments(ComboBox CBEntity, ComboBox CBTarget)
         {
             restManager.AddCookie("token", Program.ACCESS_TOKEN);
-            RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("/v1/faculties/" + (CB_Faculty.SelectedIndex + 1) + "/departments", Method.GET);
+            RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("/v1/faculties/" + (CBTarget.SelectedIndex + 1) + "/departments", Method.GET);
             if (restManager.IsOperationSuccessful(responseObject))
             {
                 departments = JsonConvert.DeserializeObject<List<Department>>(restManager.ReadResponseField(responseObject, "datas").ToString());
-                CB_Department.DataSource = departments;
-                CB_Department.DisplayMember = "Name";
+                CBEntity.DataSource = departments;
+                CBEntity.DisplayMember = "Name";
             }
         }
 
-        private void Lesson_Management_Form_Load(object sender, EventArgs e)
-        {
-            GetFaculties();
-        }
 
         /// <summary>
         /// Get lessons by department Id
@@ -73,6 +83,7 @@ namespace UniOtomasyonUI.Pages.Administration
         /// <param name="id">Department Id</param>
         private void GetLessons(int id)
         {
+            DG_Lesson.Rows.Clear();
             restManager.AddCookie("token", Program.ACCESS_TOKEN);
             RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("/v1/lessons/?departmentId=" + id, Method.GET);
             if (restManager.IsOperationSuccessful(responseObject))
@@ -80,7 +91,7 @@ namespace UniOtomasyonUI.Pages.Administration
                 lessons = JsonConvert.DeserializeObject<List<Lesson>>(restManager.ReadResponseField(responseObject, "data"));
                 foreach (var lesson in lessons)
                 {
-                    DG_Lesson.Rows.Add( lesson.Id,
+                    DG_Lesson.Rows.Add(lesson.Id,
                                         lesson.Code,
                                         lesson.Name,
                                         lesson.Credit);
@@ -92,6 +103,62 @@ namespace UniOtomasyonUI.Pages.Administration
         {
             DG_Lesson.Rows.Clear();
             GetLessons(CB_Department.SelectedIndex + 1);
+        }
+
+        /// <summary>
+        /// Check form controls for security
+        /// </summary>
+        /// <returns>Validity</returns>
+        private bool CheckValidation()
+        {
+            errorMessage = null;
+            if (string.IsNullOrEmpty(Txt_Name.Text) ||
+                string.IsNullOrEmpty(Txt_Code.Text)) { errorMessage = Messages.Invalid_Lesson_Identity; }
+            else if (Txt_Credit.Value == 0 ||
+                     NUD_Class.Value == 0) { errorMessage = Messages.Invalid_Lesson_Values; }
+            else if (CB_Faculty_Input.DataSource == null ||
+                     CB_Department_Input.DataSource == null) { errorMessage = Messages.Not_Empty_Department_Or_Faculty; }
+
+            return errorMessage == null ? true : false;
+        }
+
+        private void Btn_Lesson_Add_Click(object sender, EventArgs e)
+        {
+            if (CheckValidation())
+            {
+                CreateLessonDto createLessonDto = new CreateLessonDto
+                {
+                    Code = Txt_Code.Text,
+                    Credit = (int)Txt_Credit.Value,
+                    Name = Txt_Name.Text,
+                    Grade = (int)NUD_Class.Value,
+                    Status = "OPEN",
+                };
+                RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest(
+                    String.Concat("/v1/lessons/?departmentId=", CB_Department_Input.SelectedIndex + 1), Method.POST, createLessonDto);
+                if (restManager.IsOperationSuccessful(responseObject))
+                {
+                    MessageBox.Show(Messages.Lesson_Added, "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void Btn_Lesson_Delete_Click(object sender, EventArgs e)
+        {
+            if(DG_Lesson.SelectedRows.Count == 0)
+            {
+                MessageBox.Show(Messages.Lesson_Delete_But_Unselected, "Hata", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            }
+            else
+            {
+                restManager.AddCookie("token", Program.ACCESS_TOKEN);
+                RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest(
+                    String.Concat("/v1/lessons/", DG_Lesson.SelectedRows[0].Cells[0].Value), Method.DELETE);
+                if(restManager.IsOperationSuccessful(responseObject))
+                {
+                    MessageBox.Show(Messages.Lesson_Deleted, "Bilgilendirme", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }
