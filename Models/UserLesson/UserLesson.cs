@@ -19,6 +19,8 @@ namespace UniOtomasyonUI.Models.UserLesson
 
         [JsonProperty("userId")]
         public int UserId { get; set; }
+
+        public string LessonName { get { return Lesson.Name; } }
     }
 
 
