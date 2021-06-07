@@ -30,11 +30,6 @@ namespace UniOtomasyonUI.Pages
             form.ShowDialog();
         }
 
-        private void Student_Form_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Visible = false;
-        }
-
         private void Panel_Note_Click(object sender, EventArgs e)
         {
             Lessons_Form form = new Lessons_Form();
