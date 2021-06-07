@@ -27,7 +27,7 @@ namespace UniOtomasyonUI.Pages
 
         private void Panel_Notes_Click(object sender, EventArgs e)
         {
-            Exam_Management_System form = new Exam_Management_System();
+            Exam_Management_Form form = new Exam_Management_Form();
             form.ShowDialog();
         }
 
@@ -35,11 +35,6 @@ namespace UniOtomasyonUI.Pages
         {
             User_Management_Form form = new User_Management_Form();
             form.ShowDialog();
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
-        {
-
         }
     }
 }
