@@ -24,13 +24,13 @@ namespace UniOtomasyonUI.Pages.Management
 
         private void User_Management_Form_Load(object sender, EventArgs e)
         {
-            GetUsers();
+            GetUsers(DG_User);
         }
 
         /// <summary>
         /// Get All student users 
         /// </summary>
-        private void GetUsers()
+        public void GetUsers(DataGridView dg_view)
         {
             restManager.AddCookie("token", Program.ACCESS_TOKEN);
             //restManager.AddParameter("departmentId", departmentId);
@@ -40,7 +40,7 @@ namespace UniOtomasyonUI.Pages.Management
                 List<Models.User> users = JsonConvert.DeserializeObject<List<Models.User>>(restManager.ReadResponseField(responseObject, "data").ToString());
                 foreach (var user in users)
                 {
-                    DG_User.Rows.Add(user.Id,
+                    dg_view.Rows.Add(user.Id,
                                     user.FirstName,
                                     user.LastName,
                                     GetStatusDescription(user.Status),
