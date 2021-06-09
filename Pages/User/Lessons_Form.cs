@@ -66,7 +66,7 @@ namespace UniOtomasyonUI.Pages.User
             switch (season)
             {
                 case "SPRING": season = "Güz Dönemi"; break;
-                case "WINTER": season = "Kış Dönemi"; break;
+                case "AUTUMN": season = "Kış Dönemi"; break;
                 case "SUMMER": season = "Yaz Dönemi"; break;
             }
             return season;
