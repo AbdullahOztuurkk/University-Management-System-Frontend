@@ -1,11 +1,7 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace UniOtomasyonUI.Models.UserLesson
 {
-
     public class UserLesson
     {
         [JsonProperty("season")]
@@ -15,13 +11,11 @@ namespace UniOtomasyonUI.Models.UserLesson
         public int Average { get; set; }
 
         [JsonProperty("lesson")]
-        public Lesson Lesson { get; set; }
+        public Lesson.Lesson Lesson { get; set; }
 
         [JsonProperty("userId")]
         public int UserId { get; set; }
 
         public string LessonName { get { return Lesson.Name; } }
     }
-
-
 }
