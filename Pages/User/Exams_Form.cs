@@ -1,17 +1,9 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using UniOtomasyonUI.Manager;
-using UniOtomasyonUI.Models;
-using UniOtomasyonUI.Models.Dto;
 using UniOtomasyonUI.Models.Exam;
 using WinFormUI.Layout;
 
