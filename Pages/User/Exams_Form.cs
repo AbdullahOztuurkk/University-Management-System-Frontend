@@ -45,9 +45,8 @@ namespace UniOtomasyonUI.Pages.User
         /// </summary>
         private void GetExams()
         {
-            GetExamsDto examsDto = new GetExamsDto { Id = CurrentUser.Id };
             restManager.AddCookie("token", Program.ACCESS_TOKEN);
-            RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("v1/exams/", Method.GET, examsDto);
+            RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("v1/exams/me", Method.GET);
             if (restManager.IsOperationSuccessful(responseObject))
             {
                 List<Exam> Exams = JsonConvert.DeserializeObject<List<Exam>>(restManager.ReadResponseField(responseObject, "data"));
@@ -56,9 +55,9 @@ namespace UniOtomasyonUI.Pages.User
                     foreach (var exam in Exams)
                     {
                         DG_Exam.Rows.Add(
-                            exam.UserLesson.lesson.code,
-                            exam.UserLesson.lesson.name,
-                            exam.UserLesson.lesson.credit,
+                            exam.UserLesson.lesson.Code,
+                            exam.UserLesson.lesson.Name,
+                            exam.UserLesson.lesson.Credit,
                             GetExamTypeDescription(exam.Type),
                             exam.Score,
                             exam.announcementDate.ToShortDateString());
