@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace UniOtomasyonUI.Models.Dto
+namespace UniOtomasyonUI.Models.Exam
 {
-    public class GetExamsDto
+    public class DeleteExamDto
     {
         [JsonProperty("id")]
         public int Id { get; set; }

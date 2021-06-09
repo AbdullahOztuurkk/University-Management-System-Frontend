@@ -1,7 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace UniOtomasyonUI.Models.Exam
 {
@@ -16,4 +14,9 @@ namespace UniOtomasyonUI.Models.Exam
         public ExamUserLesson UserLesson { get; set; }
     }
 
+    public class ExamUserLesson
+    {
+        public User user { get; set; }
+        public Lesson.Lesson lesson { get; set; }
+    }
 }
