@@ -5,6 +5,8 @@ namespace UniOtomasyonUI.Models.Exam
 {
     public class Exam
     {
+        [JsonProperty("id")]
+        public int Id { get; set; }
         [JsonProperty("type")]
         public string Type { get; set; }
         [JsonProperty("score")]

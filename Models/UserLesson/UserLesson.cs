@@ -4,6 +4,8 @@ namespace UniOtomasyonUI.Models.UserLesson
 {
     public class UserLesson
     {
+        [JsonProperty("id")]
+        public int Id { get; set; }
         [JsonProperty("season")]
         public string Season { get; set; }
 
