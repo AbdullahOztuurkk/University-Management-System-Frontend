@@ -40,15 +40,23 @@ namespace UniOtomasyonUI.Pages.Management
             this.label5 = new System.Windows.Forms.Label();
             this.DG_User = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GV_UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GV_UserSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.Btn_Lesson_Add = new System.Windows.Forms.Button();
             this.Btn_Lesson_Update = new System.Windows.Forms.Button();
             this.Btn_Lesson_Delete = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DG_Exam = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Surname_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Code_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LessonName_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Credit_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExamType_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Score_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AnnouncementDate_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LessonCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -168,39 +176,41 @@ namespace UniOtomasyonUI.Pages.Management
             this.DG_User.ColumnHeadersHeight = 38;
             this.DG_User.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
+            this.GV_UserName,
+            this.GV_UserSurname});
             this.DG_User.Location = new System.Drawing.Point(349, 19);
             this.DG_User.MultiSelect = false;
             this.DG_User.Name = "DG_User";
             this.DG_User.ReadOnly = true;
             this.DG_User.RowHeadersWidth = 30;
             this.DG_User.RowTemplate.Height = 25;
+            this.DG_User.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DG_User.Size = new System.Drawing.Size(395, 219);
             this.DG_User.TabIndex = 0;
+            this.DG_User.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_User_CellClick);
             this.DG_User.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_User_CellClick);
             // 
             // Id
             // 
-            this.Id.FillWeight = 38.07107F;
+            this.Id.FillWeight = 30F;
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
             this.Id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // dataGridViewTextBoxColumn1
+            // GV_UserName
             // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 130.9645F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Öğrenci Adı";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.GV_UserName.FillWeight = 130.9645F;
+            this.GV_UserName.HeaderText = "Adı";
+            this.GV_UserName.Name = "GV_UserName";
+            this.GV_UserName.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // GV_UserSurname
             // 
-            this.dataGridViewTextBoxColumn2.FillWeight = 130.9645F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Kullanıcı Soyadı";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.GV_UserSurname.FillWeight = 130.9645F;
+            this.GV_UserSurname.HeaderText = "Soyadı";
+            this.GV_UserSurname.Name = "GV_UserSurname";
+            this.GV_UserSurname.ReadOnly = true;
             // 
             // label4
             // 
@@ -238,6 +248,7 @@ namespace UniOtomasyonUI.Pages.Management
             this.Btn_Lesson_Update.TabIndex = 9;
             this.Btn_Lesson_Update.Text = "Sınav Güncelle";
             this.Btn_Lesson_Update.UseVisualStyleBackColor = false;
+            this.Btn_Lesson_Update.Click += new System.EventHandler(this.Btn_Lesson_Update_Click);
             // 
             // Btn_Lesson_Delete
             // 
@@ -274,30 +285,80 @@ namespace UniOtomasyonUI.Pages.Management
             this.DG_Exam.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DG_Exam.ColumnHeadersHeight = 38;
             this.DG_Exam.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.UserName,
-            this.UserSurname,
-            this.LessonCode,
-            this.LessonName,
-            this.LessonCredit,
-            this.ExamType,
-            this.ExamScore,
-            this.ExamAnnouncementDate});
+            this.Id_Column,
+            this.Name_Column,
+            this.Surname_Column,
+            this.Code_Column,
+            this.LessonName_Column,
+            this.Credit_Column,
+            this.ExamType_Column,
+            this.Score_Column,
+            this.AnnouncementDate_Column});
             this.DG_Exam.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DG_Exam.Location = new System.Drawing.Point(3, 19);
             this.DG_Exam.MultiSelect = false;
             this.DG_Exam.Name = "DG_Exam";
             this.DG_Exam.ReadOnly = true;
             this.DG_Exam.RowTemplate.Height = 25;
+            this.DG_Exam.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DG_Exam.Size = new System.Drawing.Size(757, 245);
             this.DG_Exam.TabIndex = 0;
+            this.DG_Exam.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_Exam_CellClick);
             // 
-            // dataGridViewTextBoxColumn3
+            // Id_Column
             // 
-            this.dataGridViewTextBoxColumn3.FillWeight = 35F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.Id_Column.FillWeight = 40F;
+            this.Id_Column.HeaderText = "Id";
+            this.Id_Column.Name = "Id_Column";
+            this.Id_Column.ReadOnly = true;
+            // 
+            // Name_Column
+            // 
+            this.Name_Column.HeaderText = "Adı";
+            this.Name_Column.Name = "Name_Column";
+            this.Name_Column.ReadOnly = true;
+            // 
+            // Surname_Column
+            // 
+            this.Surname_Column.HeaderText = "Soyadı";
+            this.Surname_Column.Name = "Surname_Column";
+            this.Surname_Column.ReadOnly = true;
+            // 
+            // Code_Column
+            // 
+            this.Code_Column.HeaderText = "Ders Kodu";
+            this.Code_Column.Name = "Code_Column";
+            this.Code_Column.ReadOnly = true;
+            // 
+            // LessonName_Column
+            // 
+            this.LessonName_Column.HeaderText = "Ders Adı";
+            this.LessonName_Column.Name = "LessonName_Column";
+            this.LessonName_Column.ReadOnly = true;
+            // 
+            // Credit_Column
+            // 
+            this.Credit_Column.HeaderText = "Kredi";
+            this.Credit_Column.Name = "Credit_Column";
+            this.Credit_Column.ReadOnly = true;
+            // 
+            // ExamType_Column
+            // 
+            this.ExamType_Column.HeaderText = "Sınav Türü";
+            this.ExamType_Column.Name = "ExamType_Column";
+            this.ExamType_Column.ReadOnly = true;
+            // 
+            // Score_Column
+            // 
+            this.Score_Column.HeaderText = "Puan";
+            this.Score_Column.Name = "Score_Column";
+            this.Score_Column.ReadOnly = true;
+            // 
+            // AnnouncementDate_Column
+            // 
+            this.AnnouncementDate_Column.HeaderText = "Tarih";
+            this.AnnouncementDate_Column.Name = "AnnouncementDate_Column";
+            this.AnnouncementDate_Column.ReadOnly = true;
             // 
             // UserName
             // 
@@ -397,13 +458,9 @@ namespace UniOtomasyonUI.Pages.Management
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView DG_User;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.NumericUpDown NUD_Score;
         private System.Windows.Forms.ComboBox CB_Type;
         private System.Windows.Forms.ComboBox CB_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserSurname;
         private System.Windows.Forms.DataGridViewTextBoxColumn LessonCode;
@@ -412,5 +469,17 @@ namespace UniOtomasyonUI.Pages.Management
         private System.Windows.Forms.DataGridViewTextBoxColumn ExamType;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExamScore;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExamAnnouncementDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GV_UserName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GV_UserSurname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name_Column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Surname_Column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Code_Column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LessonName_Column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Credit_Column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExamType_Column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Score_Column;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AnnouncementDate_Column;
     }
 }

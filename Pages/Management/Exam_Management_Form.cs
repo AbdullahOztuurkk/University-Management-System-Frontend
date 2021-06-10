@@ -17,6 +17,7 @@ namespace UniOtomasyonUI.Pages.Management
         RestManager restManager;
         List<UserLesson> userLessonList;
         string errorMessage;
+        int RowIndexModified;
         public Exam_Management_Form()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace UniOtomasyonUI.Pages.Management
 
         private void Exam_Management_System_Load(object sender, System.EventArgs e)
         {
+            CB_Type.SelectedIndex = 0;
             GetExams();
         }
 
@@ -64,6 +66,7 @@ namespace UniOtomasyonUI.Pages.Management
         private void GetExams()
         {
             DG_Exam.Rows.Clear();
+            DG_User.Rows.Clear();
             restManager.AddCookie("token", Program.ACCESS_TOKEN);
             RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("v1/exams/", Method.GET);
             if (restManager.IsOperationSuccessful(responseObject))
@@ -74,6 +77,7 @@ namespace UniOtomasyonUI.Pages.Management
                     foreach (var exam in Exams)
                     {
                         DG_Exam.Rows.Add(
+                            exam.Id,
                             exam.UserLesson.user.FirstName,
                             exam.UserLesson.user.LastName,
                             exam.UserLesson.lesson.Code,
@@ -82,8 +86,8 @@ namespace UniOtomasyonUI.Pages.Management
                             Exams_Form.GetExamTypeDescription(exam.Type),
                             exam.Score,
                             exam.announcementDate.ToShortDateString());
-                        new User_Management_Form().GetUsers(DG_User);
                     }
+                    new User_Management_Form().GetUsers(DG_User);
                 }
             }
         }
@@ -108,8 +112,9 @@ namespace UniOtomasyonUI.Pages.Management
                     Score = (int)NUD_Score.Value,
                     announcementDate = DateTime.UtcNow,
                     Type = GetExamType(CB_Type.Text),
-                    UserLessonId = Convert.ToInt32(DG_User.SelectedRows[0].Cells[0].Value)
+                    UserLessonId = userLessonList.Find(p => p.LessonName == CB_Name.Text).Id
                 };
+                restManager.AddCookie("token", Program.ACCESS_TOKEN);
                 RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("/v1/exams/",Method.POST,createExamDto);
                 if (restManager.IsOperationSuccessful(responseObject))
                 {
@@ -128,7 +133,7 @@ namespace UniOtomasyonUI.Pages.Management
         {
             switch (CB_Type.SelectedIndex)
             {
-                case 0: text = "MIDTERM"; break;
+                case 0: text = "MID"; break;
                 case 1: text = "PROJECT"; break;
                 case 2: text = "FINAL";break;
                 case 3: text = "MAKEUP"; break;
@@ -150,7 +155,8 @@ namespace UniOtomasyonUI.Pages.Management
         {
             if(DG_User.SelectedRows.Count>0)
             {
-                DeleteExamDto deleteExamDto = new DeleteExamDto { Id = Convert.ToInt32(DG_User.SelectedRows[0].Cells[0].Value) };
+                restManager.AddCookie("token", Program.ACCESS_TOKEN);
+                DeleteExamDto deleteExamDto = new DeleteExamDto { Id = int.Parse(DG_Exam.Rows[RowIndexModified].Cells[0].Value.ToString()) };
                 RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest(
                     String.Concat("/v1/exams/",deleteExamDto.Id),Method.DELETE);
                 if(restManager.IsOperationSuccessful(responseObject))
@@ -162,6 +168,35 @@ namespace UniOtomasyonUI.Pages.Management
             else
             {
                 MessageBox.Show(Messages.Exam_Delete_But_Unselected, "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void DG_Exam_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            RowIndexModified = e.RowIndex;
+        }
+
+        private void Btn_Lesson_Update_Click(object sender, EventArgs e)
+        {
+            if(DG_Exam.SelectedRows.Count>0)
+            {
+                restManager.AddCookie("token", Program.ACCESS_TOKEN);
+                UpdateExamDto examDto = new UpdateExamDto
+                {
+                    Score = Convert.ToInt32(NUD_Score.Value),
+                    Type = GetExamType(CB_Type.Text)
+                };
+                RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest(
+                    String.Concat("/v1/exams/", Convert.ToInt32(DG_Exam.Rows[RowIndexModified].Cells[0].Value)), Method.PATCH,examDto);
+                if (restManager.IsOperationSuccessful(responseObject))
+                {
+                    MessageBox.Show(Messages.Exam_Updated, "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GetExams();
+                }
+            }
+            else
+            {
+                MessageBox.Show(Messages.Exam_Update_But_Unselected, "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
