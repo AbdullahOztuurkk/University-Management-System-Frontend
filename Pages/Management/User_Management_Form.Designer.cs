@@ -165,6 +165,7 @@ namespace UniOtomasyonUI.Pages.Management
             // Btn_User_Add
             // 
             this.Btn_User_Add.BackColor = System.Drawing.Color.LimeGreen;
+            this.Btn_User_Add.Enabled = false;
             this.Btn_User_Add.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.Btn_User_Add.FlatAppearance.BorderSize = 0;
             this.Btn_User_Add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -175,6 +176,7 @@ namespace UniOtomasyonUI.Pages.Management
             this.Btn_User_Add.TabIndex = 9;
             this.Btn_User_Add.Text = "Kullanıcı Ekle";
             this.Btn_User_Add.UseVisualStyleBackColor = false;
+            this.Btn_User_Add.Click += new System.EventHandler(this.Btn_User_Add_Click);
             // 
             // Btn_User_Update
             // 
@@ -189,6 +191,7 @@ namespace UniOtomasyonUI.Pages.Management
             this.Btn_User_Update.TabIndex = 8;
             this.Btn_User_Update.Text = "Kullanıcı Güncelle";
             this.Btn_User_Update.UseVisualStyleBackColor = false;
+            this.Btn_User_Update.Click += new System.EventHandler(this.Btn_User_Update_Click);
             // 
             // Btn_User_Delete
             // 
@@ -203,6 +206,7 @@ namespace UniOtomasyonUI.Pages.Management
             this.Btn_User_Delete.TabIndex = 7;
             this.Btn_User_Delete.Text = "Kullanıcı Sil";
             this.Btn_User_Delete.UseVisualStyleBackColor = false;
+            this.Btn_User_Delete.Click += new System.EventHandler(this.Btn_User_Delete_Click);
             // 
             // CB_Role
             // 
@@ -282,8 +286,11 @@ namespace UniOtomasyonUI.Pages.Management
             this.DG_User.Name = "DG_User";
             this.DG_User.ReadOnly = true;
             this.DG_User.RowTemplate.Height = 25;
+            this.DG_User.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DG_User.Size = new System.Drawing.Size(757, 242);
             this.DG_User.TabIndex = 0;
+            this.DG_User.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_User_CellClick);
+            this.DG_User.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_User_CellClick);
             // 
             // UserId
             // 
