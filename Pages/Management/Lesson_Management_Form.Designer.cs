@@ -171,6 +171,7 @@ namespace UniOtomasyonUI.Pages.Administration
             this.Btn_Lesson_Update.TabIndex = 9;
             this.Btn_Lesson_Update.Text = "Ders Güncelle";
             this.Btn_Lesson_Update.UseVisualStyleBackColor = false;
+            this.Btn_Lesson_Update.Click += new System.EventHandler(this.Btn_Lesson_Update_Click);
             // 
             // Btn_Lesson_Delete
             // 

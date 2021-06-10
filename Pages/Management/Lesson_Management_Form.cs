@@ -160,5 +160,30 @@ namespace UniOtomasyonUI.Pages.Administration
                 }
             }
         }
+
+        private void Btn_Lesson_Update_Click(object sender, EventArgs e)
+        {
+            if (DG_Lesson.SelectedRows.Count == 0)
+            {
+                MessageBox.Show(Messages.Lesson_Update_But_Unselected, "Hata", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            }
+            else
+            {
+                CreateLessonDto createLessonDto = new CreateLessonDto
+                {
+                    Code = Txt_Code.Text,
+                    Credit = (int)Txt_Credit.Value,
+                    Name = Txt_Name.Text,
+                    Grade = (int)NUD_Class.Value,
+                    Status = "OPEN",
+                };
+                RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest(
+                    String.Concat("/v1/lessons/", CB_Department_Input.SelectedIndex + 1), Method.PATCH, createLessonDto);
+                if (restManager.IsOperationSuccessful(responseObject))
+                {
+                    MessageBox.Show(Messages.Lesson_Updated, "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
     }
 }
