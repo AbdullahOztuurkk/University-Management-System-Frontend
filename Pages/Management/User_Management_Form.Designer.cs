@@ -32,6 +32,10 @@ namespace UniOtomasyonUI.Pages.Management
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Management_Form));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.CB_Department = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.CB_Faculty = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.Txt_Password = new System.Windows.Forms.TextBox();
             this.CB_Status = new System.Windows.Forms.ComboBox();
             this.Txt_Password_Again = new System.Windows.Forms.TextBox();
@@ -74,6 +78,10 @@ namespace UniOtomasyonUI.Pages.Management
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.CB_Department);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.CB_Faculty);
+            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.Txt_Password);
             this.groupBox2.Controls.Add(this.CB_Status);
             this.groupBox2.Controls.Add(this.Txt_Password_Again);
@@ -99,11 +107,54 @@ namespace UniOtomasyonUI.Pages.Management
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kullanıcı Ekle";
             // 
+            // CB_Department
+            // 
+            this.CB_Department.FormattingEnabled = true;
+            this.CB_Department.Items.AddRange(new object[] {
+            "Öğrenci",
+            "Öğretmen",
+            "Yetkili"});
+            this.CB_Department.Location = new System.Drawing.Point(133, 211);
+            this.CB_Department.Name = "CB_Department";
+            this.CB_Department.Size = new System.Drawing.Size(113, 23);
+            this.CB_Department.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(27, 210);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 23);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Bölüm";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // CB_Faculty
+            // 
+            this.CB_Faculty.FormattingEnabled = true;
+            this.CB_Faculty.Items.AddRange(new object[] {
+            "Öğrenci",
+            "Öğretmen",
+            "Yetkili"});
+            this.CB_Faculty.Location = new System.Drawing.Point(133, 165);
+            this.CB_Faculty.Name = "CB_Faculty";
+            this.CB_Faculty.Size = new System.Drawing.Size(113, 23);
+            this.CB_Faculty.TabIndex = 15;
+            this.CB_Faculty.SelectedIndexChanged += new System.EventHandler(this.CB_Faculty_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(27, 164);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(100, 23);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Fakülte :";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Txt_Password
             // 
-            this.Txt_Password.Location = new System.Drawing.Point(135, 78);
+            this.Txt_Password.Location = new System.Drawing.Point(133, 78);
             this.Txt_Password.Name = "Txt_Password";
-            this.Txt_Password.Size = new System.Drawing.Size(227, 23);
+            this.Txt_Password.Size = new System.Drawing.Size(229, 23);
             this.Txt_Password.TabIndex = 3;
             this.Txt_Password.UseSystemPasswordChar = true;
             // 
@@ -170,9 +221,9 @@ namespace UniOtomasyonUI.Pages.Management
             this.Btn_User_Add.FlatAppearance.BorderSize = 0;
             this.Btn_User_Add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_User_Add.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_User_Add.Location = new System.Drawing.Point(637, 210);
+            this.Btn_User_Add.Location = new System.Drawing.Point(636, 210);
             this.Btn_User_Add.Name = "Btn_User_Add";
-            this.Btn_User_Add.Size = new System.Drawing.Size(111, 28);
+            this.Btn_User_Add.Size = new System.Drawing.Size(112, 28);
             this.Btn_User_Add.TabIndex = 9;
             this.Btn_User_Add.Text = "Kullanıcı Ekle";
             this.Btn_User_Add.UseVisualStyleBackColor = false;
@@ -185,9 +236,9 @@ namespace UniOtomasyonUI.Pages.Management
             this.Btn_User_Update.FlatAppearance.BorderSize = 0;
             this.Btn_User_Update.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_User_Update.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_User_Update.Location = new System.Drawing.Point(510, 210);
+            this.Btn_User_Update.Location = new System.Drawing.Point(509, 210);
             this.Btn_User_Update.Name = "Btn_User_Update";
-            this.Btn_User_Update.Size = new System.Drawing.Size(111, 28);
+            this.Btn_User_Update.Size = new System.Drawing.Size(112, 28);
             this.Btn_User_Update.TabIndex = 8;
             this.Btn_User_Update.Text = "Kullanıcı Güncelle";
             this.Btn_User_Update.UseVisualStyleBackColor = false;
@@ -200,9 +251,9 @@ namespace UniOtomasyonUI.Pages.Management
             this.Btn_User_Delete.FlatAppearance.BorderSize = 0;
             this.Btn_User_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_User_Delete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_User_Delete.Location = new System.Drawing.Point(383, 210);
+            this.Btn_User_Delete.Location = new System.Drawing.Point(382, 210);
             this.Btn_User_Delete.Name = "Btn_User_Delete";
-            this.Btn_User_Delete.Size = new System.Drawing.Size(111, 28);
+            this.Btn_User_Delete.Size = new System.Drawing.Size(112, 28);
             this.Btn_User_Delete.TabIndex = 7;
             this.Btn_User_Delete.Text = "Kullanıcı Sil";
             this.Btn_User_Delete.UseVisualStyleBackColor = false;
@@ -229,7 +280,7 @@ namespace UniOtomasyonUI.Pages.Management
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(27, 119);
+            this.label6.Location = new System.Drawing.Point(27, 121);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 23);
             this.label6.TabIndex = 2;
@@ -238,7 +289,7 @@ namespace UniOtomasyonUI.Pages.Management
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(27, 77);
+            this.label5.Location = new System.Drawing.Point(27, 78);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 23);
             this.label5.TabIndex = 1;
@@ -372,5 +423,10 @@ namespace UniOtomasyonUI.Pages.Management
         private System.Windows.Forms.DataGridViewTextBoxColumn UserSurname;
         private System.Windows.Forms.DataGridViewTextBoxColumn UserStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.ComboBox CB_Faculty;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox CB_Department;
     }
 }
