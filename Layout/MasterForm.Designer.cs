@@ -50,7 +50,7 @@ namespace WinFormUI.Layout
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(784, 47);
             this.label1.TabIndex = 1;
-            this.label1.Text = "MAFA Yazılım";
+            this.label1.Text = "Öztürk Yazılım";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
