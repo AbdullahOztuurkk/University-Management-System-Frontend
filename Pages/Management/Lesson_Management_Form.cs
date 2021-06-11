@@ -18,10 +18,10 @@ namespace UniOtomasyonUI.Pages.Administration
 {
     public partial class Lesson_Management_Form : MasterForm
     {
-        RestManager restManager;
-        List<Faculty> faculties;
-        List<Department> departments;
-        List<Lesson> lessons;
+        static RestManager restManager;
+        static List<Faculty> faculties;
+        static List<Department> departments;
+        static List<Lesson> lessons;
         string errorMessage;
         public Lesson_Management_Form()
         {
@@ -49,7 +49,7 @@ namespace UniOtomasyonUI.Pages.Administration
         /// <summary>
         /// Get faculties in system
         /// </summary>
-        private void GetFaculties(ComboBox CBEntity)
+        public static void GetFaculties(ComboBox CBEntity)
         {
             restManager.AddCookie("token", Program.ACCESS_TOKEN);
             RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("/v1/faculties", Method.GET);
@@ -64,7 +64,7 @@ namespace UniOtomasyonUI.Pages.Administration
         /// <summary>
         /// Get departments in system by facultyId
         /// </summary>
-        private void GetDepartments(ComboBox CBEntity, ComboBox CBTarget)
+        public static void GetDepartments(ComboBox CBEntity, ComboBox CBTarget)
         {
             restManager.AddCookie("token", Program.ACCESS_TOKEN);
             RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("/v1/faculties/" + (CBTarget.SelectedIndex + 1) + "/departments", Method.GET);
