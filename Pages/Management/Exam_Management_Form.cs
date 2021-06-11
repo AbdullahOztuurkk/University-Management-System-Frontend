@@ -151,6 +151,9 @@ namespace UniOtomasyonUI.Pages.Management
             GetUserLesson(Convert.ToInt32(DG_User.Rows[e.RowIndex].Cells[0].Value));
         }
 
+        /// <summary>
+        /// Delete the exam if a cell clicked in datagridview exam
+        /// </summary>
         private void Btn_Lesson_Delete_Click(object sender, EventArgs e)
         {
             if(DG_User.SelectedRows.Count>0)
@@ -176,6 +179,9 @@ namespace UniOtomasyonUI.Pages.Management
             RowIndexModified = e.RowIndex;
         }
 
+        /// <summary>
+        /// Update the exam if a cell clicked in datagridview exam
+        /// </summary>
         private void Btn_Lesson_Update_Click(object sender, EventArgs e)
         {
             if(DG_Exam.SelectedRows.Count>0)
