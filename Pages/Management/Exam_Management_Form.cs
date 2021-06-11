@@ -68,7 +68,7 @@ namespace UniOtomasyonUI.Pages.Management
             DG_Exam.Rows.Clear();
             DG_User.Rows.Clear();
             restManager.AddCookie("token", Program.ACCESS_TOKEN);
-            RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("v1/exams/", Method.GET);
+            RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("v1/exams/me", Method.GET);
             if (restManager.IsOperationSuccessful(responseObject))
             {
                 List<Exam> Exams = JsonConvert.DeserializeObject<List<Exam>>(restManager.ReadResponseField(responseObject, "data"));

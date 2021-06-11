@@ -22,7 +22,7 @@ namespace UniOtomasyonUI.Pages.Management
             restManager = new RestManager();
             CB_Role.SelectedIndex = 0;
             CB_Status.SelectedIndex = 0;
-            Lesson_Management_Form.GetFaculties(CB_Faculty);
+            Lesson_Management_Form.GetFaculties(restManager, CB_Faculty);
         }
 
         private void User_Management_Form_FormClosed(object sender, FormClosedEventArgs e)
@@ -190,7 +190,7 @@ namespace UniOtomasyonUI.Pages.Management
 
         private void CB_Faculty_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Lesson_Management_Form.GetDepartments(CB_Department, CB_Faculty);
+            Lesson_Management_Form.GetDepartments(restManager, CB_Department, CB_Faculty);
         }
     }
 }

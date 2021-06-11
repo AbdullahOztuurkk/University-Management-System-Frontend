@@ -33,23 +33,23 @@ namespace UniOtomasyonUI.Pages.Administration
         }
         private void Lesson_Management_Form_Load(object sender, EventArgs e)
         {
-            GetFaculties(CB_Faculty);
-            GetFaculties(CB_Faculty_Input);
+            GetFaculties(restManager, CB_Faculty);
+            GetFaculties(restManager, CB_Faculty_Input);
         }
 
         private void CB_Faculty_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GetDepartments(CB_Department, CB_Faculty);
+            GetDepartments(restManager, CB_Department, CB_Faculty);
         }
         private void CB_Faculty_Input_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GetDepartments(CB_Department_Input, CB_Faculty_Input);
+            GetDepartments(restManager, CB_Department_Input, CB_Faculty_Input);
         }
 
         /// <summary>
         /// Get faculties in system
         /// </summary>
-        public static void GetFaculties(ComboBox CBEntity)
+        public static void GetFaculties(RestManager restManager,ComboBox CBEntity)
         {
             restManager.AddCookie("token", Program.ACCESS_TOKEN);
             RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("/v1/faculties", Method.GET);
@@ -64,7 +64,7 @@ namespace UniOtomasyonUI.Pages.Administration
         /// <summary>
         /// Get departments in system by facultyId
         /// </summary>
-        public static void GetDepartments(ComboBox CBEntity, ComboBox CBTarget)
+        public static void GetDepartments(RestManager restManager,ComboBox CBEntity, ComboBox CBTarget)
         {
             restManager.AddCookie("token", Program.ACCESS_TOKEN);
             RestResponse responseObject = (RestResponse)restManager.CreateHttpRequest("/v1/faculties/" + (CBTarget.SelectedIndex + 1) + "/departments", Method.GET);

@@ -313,7 +313,7 @@ namespace UniOtomasyonUI.Pages.Management
             this.groupBox1.Size = new System.Drawing.Size(763, 264);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tüm Kullanıcılar";
+            this.groupBox1.Text = "Tüm Öğrenciler";
             // 
             // DG_User
             // 
@@ -382,7 +382,7 @@ namespace UniOtomasyonUI.Pages.Management
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "User_Management_Form";
-            this.Text = "Ders Yönetim Paneli";
+            this.Text = "Kullanıcı Yönetim Paneli";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.User_Management_Form_FormClosed);
             this.Load += new System.EventHandler(this.User_Management_Form_Load);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
