@@ -7,7 +7,7 @@ namespace UniOtomasyonUI
     static class Program
     {
         public static string ACCESS_TOKEN = "";
-        public static User CURRENT_USER;
+        public static Models.User.User CURRENT_USER;
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>

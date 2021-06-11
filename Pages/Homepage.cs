@@ -35,7 +35,7 @@ namespace UniOtomasyonUI
                     Program.ACCESS_TOKEN = responseObject.Cookies[0].Value;
                     restManager.AddCookie("token", Program.ACCESS_TOKEN);
                     RestResponse responseMe = (RestResponse)restManager.CreateHttpRequest("/v1/auth/me", Method.GET);
-                    Program.CURRENT_USER = JsonConvert.DeserializeObject<User>(restManager.ReadResponseField(responseMe, "data"));
+                    Program.CURRENT_USER = JsonConvert.DeserializeObject<Models.User.User>(restManager.ReadResponseField(responseMe, "data"));
                     OpenUserForm(Program.CURRENT_USER.Role);
                 }
             }

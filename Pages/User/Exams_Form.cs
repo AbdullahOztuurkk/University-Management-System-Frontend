@@ -12,7 +12,7 @@ namespace UniOtomasyonUI.Pages.User
     public partial class Exams_Form : MasterForm
     {
         RestManager restManager;
-        Models.User CurrentUser = Program.CURRENT_USER;
+        Models.User.User CurrentUser = Program.CURRENT_USER;
         public Exams_Form()
         {
             InitializeComponent();

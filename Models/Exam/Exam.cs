@@ -18,7 +18,7 @@ namespace UniOtomasyonUI.Models.Exam
 
     public class ExamUserLesson
     {
-        public User user { get; set; }
+        public Models.User.User user { get; set; }
         public Lesson.Lesson lesson { get; set; }
     }
 }

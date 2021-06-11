@@ -14,7 +14,7 @@ namespace UniOtomasyonUI.Pages.Informations
 {
     public partial class Information_Form : MasterForm
     {
-        Models.User CurrentUser = Program.CURRENT_USER;
+        Models.User.User CurrentUser = Program.CURRENT_USER;
         public Information_Form()
         {
             InitializeComponent();
