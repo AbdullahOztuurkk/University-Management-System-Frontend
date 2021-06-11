@@ -32,6 +32,7 @@ namespace UniOtomasyonUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Homepage));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.PB_Security = new System.Windows.Forms.PictureBox();
             this.Txt_Code = new System.Windows.Forms.Label();
             this.Txt_Security_Code = new System.Windows.Forms.MaskedTextBox();
             this.Btn_Login = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@ namespace UniOtomasyonUI
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.PB_Security = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Security)).BeginInit();
@@ -83,6 +83,18 @@ namespace UniOtomasyonUI
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(382, 309);
             this.panel2.TabIndex = 0;
+            // 
+            // PB_Security
+            // 
+            this.PB_Security.BackColor = System.Drawing.Color.Transparent;
+            this.PB_Security.Image = global::UniOtomasyonUI.Properties.Resources.refresh;
+            this.PB_Security.Location = new System.Drawing.Point(336, 167);
+            this.PB_Security.Name = "PB_Security";
+            this.PB_Security.Size = new System.Drawing.Size(23, 23);
+            this.PB_Security.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PB_Security.TabIndex = 7;
+            this.PB_Security.TabStop = false;
+            this.PB_Security.Click += new System.EventHandler(this.PB_Security_Click);
             // 
             // Txt_Code
             // 
@@ -178,18 +190,6 @@ namespace UniOtomasyonUI
             this.label4.TabIndex = 0;
             this.label4.Text = "Sisteme Giriş";
             // 
-            // PB_Security
-            // 
-            this.PB_Security.BackColor = System.Drawing.Color.Transparent;
-            this.PB_Security.Image = global::UniOtomasyonUI.Properties.Resources.refresh;
-            this.PB_Security.Location = new System.Drawing.Point(336, 167);
-            this.PB_Security.Name = "PB_Security";
-            this.PB_Security.Size = new System.Drawing.Size(23, 23);
-            this.PB_Security.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PB_Security.TabIndex = 7;
-            this.PB_Security.TabStop = false;
-            this.PB_Security.Click += new System.EventHandler(this.PB_Security_Click);
-            // 
             // Homepage
             // 
             this.AcceptButton = this.Btn_Login;
@@ -200,7 +200,6 @@ namespace UniOtomasyonUI
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "Homepage";
-            this.ShowIcon = false;
             this.Text = "Sivas Cumhuriyet Üniversitesi OBS";
             this.Load += new System.EventHandler(this.Homepage_Load);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
