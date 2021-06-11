@@ -122,10 +122,14 @@ namespace UniOtomasyonUI.Pages.Administration
             return errorMessage == null ? true : false;
         }
 
+        /// <summary>
+        /// Add lesson 
+        /// </summary>
         private void Btn_Lesson_Add_Click(object sender, EventArgs e)
         {
             if (CheckValidation())
             {
+                restManager.AddCookie("token", Program.ACCESS_TOKEN);
                 CreateLessonDto createLessonDto = new CreateLessonDto
                 {
                     Code = Txt_Code.Text,
@@ -143,6 +147,9 @@ namespace UniOtomasyonUI.Pages.Administration
             }
         }
 
+        /// <summary>
+        /// Delete the lesson if a cell clicked in datagridview exam
+        /// </summary>
         private void Btn_Lesson_Delete_Click(object sender, EventArgs e)
         {
             if(DG_Lesson.SelectedRows.Count == 0)
@@ -161,6 +168,9 @@ namespace UniOtomasyonUI.Pages.Administration
             }
         }
 
+        /// <summary>
+        /// Update the lesson if a cell clicked in datagridview exam
+        /// </summary>
         private void Btn_Lesson_Update_Click(object sender, EventArgs e)
         {
             if (DG_Lesson.SelectedRows.Count == 0)
